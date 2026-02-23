@@ -1,0 +1,749 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Restaurants | FoodieX</title>
+
+<script src="https://cdn.tailwindcss.com"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
+
+<script>
+tailwind.config = {
+  darkMode: "class",
+  theme: {
+    extend: {
+      colors: {
+        primary: "#F97316",
+        darkBg: "#020617",
+        darkCard: "#020617",
+        borderDark: "#1e293b",
+      },
+      boxShadow: {
+        soft: "0 10px 30px rgba(0,0,0,0.35)",
+      },
+    },
+  },
+};
+</script>
+
+<style>
+.card-hover {
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+.card-hover:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 15px 40px rgba(0,0,0,0.45);
+}
+</style>
+</head>
+
+<body class="bg-darkBg text-gray-200 font-sans antialiased">
+
+<!-- ================= NAVBAR ================= -->
+<!-- ================= NAVBAR ================= -->
+<header class="sticky top-0 z-50 bg-darkBg/80 backdrop-blur-xl border-b border-borderDark">
+  <div class="max-w-7xl mx-auto px-5 h-16 flex items-center justify-between">
+
+    <!-- Logo -->
+    <span class="text-2xl font-extrabold text-primary">FoodieX</span>
+
+    <!-- Desktop Menu -->
+    <nav class="hidden md:flex items-center gap-8 text-sm font-medium text-gray-300">
+      <a href="index.html" class="hover:text-primary">Home</a>
+      <a href="restaurants.html" class="text-primary">Restaurants</a>
+      <a href="order.html" class="hover:text-primary transition">Order</a>
+
+      <button id="openLogin"
+        class="ml-2 px-4 py-2 rounded-full bg-primary text-black font-semibold hover:opacity-90 transition">
+        Login
+      </button>
+    </nav>
+
+    <!-- Hamburger Button (Mobile Only) -->
+    <button id="menuBtn"
+      class="md:hidden text-gray-300 text-xl focus:outline-none">
+      <i class="fas fa-bars"></i>
+    </button>
+  </div>
+
+  <!-- Mobile Menu -->
+  <div id="mobileMenu"
+    class="hidden md:hidden bg-darkCard border-t border-borderDark px-5 py-4 space-y-4 text-gray-300">
+
+    <a href="index.html" class="block hover:text-primary">Home</a>
+    <a href="restaurants.html" class="block text-primary">Restaurants</a>
+    <a href="order.html" class="hover:text-primary transition">Order</a>
+
+    <button
+      class="w-full mt-2 px-4 py-2 rounded-full bg-primary text-black font-semibold hover:opacity-90 transition">
+      Login
+    </button>
+  </div>
+</header>
+
+<!-- ================= PAGE HEADER ================= -->
+<section class="relative h-[460px] flex items-center justify-center text-center">
+<img
+  src="https://images.unsplash.com/photo-1550547660-d9450f859349?auto=format&fit=crop&w=1600&q=80"
+  class="absolute inset-0 w-full h-full object-cover brightness-[0.35]"
+  loading="lazy"
+/>
+
+  <div class="relative z-10 max-w-2xl px-4 space-y-6">
+    <h2 class="text-4xl md:text-5xl font-extrabold text-white leading-tight">
+      Food Delivered <span class="text-primary">Fast & Fresh</span>
+    </h2>
+    <p class="text-gray-300 text-lg">
+      Discover the best restaurants near you and order in seconds.
+    </p>
+    <a href="#restaurantGrid"
+      class="inline-block bg-primary text-black px-8 py-3 rounded-full font-semibold shadow-soft">
+      Explore Restaurants
+    </a>
+  </div>
+</section>
+
+<!-- ================= SEARCH ================= -->
+<section class="max-w-7xl mx-auto px-4 pb-8">
+  <input
+    id="searchInput"
+    placeholder="Search restaurant name..."
+    class="w-full md:w-1/2 p-4 rounded-full bg-darkCard border border-borderDark focus:ring-2 focus:ring-primary outline-none"
+  />
+</section>
+
+<!-- ================= CATEGORY FILTER ================= -->
+<section class="max-w-7xl mx-auto px-4 pb-10">
+  <div id="categoryFilter" class="flex flex-wrap justify-center gap-3">
+    <button data-category="All" class="filter-btn bg-primary text-black">All</button>
+    <button data-category="Pizza" class="filter-btn">Pizza</button>
+    <button data-category="Burger" class="filter-btn">Burger</button>
+    <button data-category="Indian" class="filter-btn">Indian</button>
+    <button data-category="Chinese" class="filter-btn">Chinese</button>
+    <button data-category="Dessert" class="filter-btn">Dessert</button>
+  </div>
+</section>
+
+<!-- ================= RESTAURANT GRID ================= -->
+<section class="max-w-7xl mx-auto px-4 pb-16">
+  <div id="restaurantGrid"
+    class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+  </div>
+
+  <p id="emptyState" class="hidden text-center text-gray-400 mt-12">
+    No restaurants found.
+  </p>
+</section>
+
+<!-- ================= FOOTER ================= -->
+<footer class="border-t border-borderDark bg-darkBg">
+  <div class="max-w-7xl mx-auto px-6 py-14 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10">
+
+    <!-- Brand -->
+    <div class="lg:col-span-2 space-y-4">
+      <h2 class="text-2xl font-bold text-primary tracking-wide">FoodieX</h2>
+      <p class="text-sm text-gray-400 leading-relaxed max-w-md">
+        FoodieX is a modern food-delivery platform built for speed, reliability,
+        and seamless customer experience. Discover restaurants, order instantly,
+        and enjoy fresh food delivered fast.
+      </p>
+
+      <!-- Social -->
+      <div class="flex gap-4 text-lg">
+        <a href="#" aria-label="Facebook" class="hover:text-primary transition">
+          <i class="fab fa-facebook-f"></i>
+        </a>
+        <a href="#" aria-label="Instagram" class="hover:text-primary transition">
+          <i class="fab fa-instagram"></i>
+        </a>
+        <a href="#" aria-label="Twitter" class="hover:text-primary transition">
+          <i class="fab fa-x-twitter"></i>
+        </a>
+        <a href="#" aria-label="LinkedIn" class="hover:text-primary transition">
+          <i class="fab fa-linkedin-in"></i>
+        </a>
+      </div>
+    </div>
+
+    <!-- Product -->
+    <div>
+      <h3 class="font-semibold text-white mb-4">Product</h3>
+      <ul class="space-y-3 text-sm text-gray-400">
+        <li><a class="hover:text-primary">Restaurants</a></li>
+        <li><a class="hover:text-primary">Pricing</a></li>
+        <li><a class="hover:text-primary">Offers</a></li>
+        <li><a class="hover:text-primary">Mobile App</a></li>
+      </ul>
+    </div>
+
+    <!-- Company -->
+    <div>
+      <h3 class="font-semibold text-white mb-4">Company</h3>
+      <ul class="space-y-3 text-sm text-gray-400">
+        <li><a class="hover:text-primary">About Us</a></li>
+        <li><a class="hover:text-primary">Careers</a></li>
+        <li><a class="hover:text-primary">Press</a></li>
+        <li><a class="hover:text-primary">Contact</a></li>
+      </ul>
+    </div>
+
+    <!-- Legal -->
+    <div>
+      <h3 class="font-semibold text-white mb-4">Legal</h3>
+      <ul class="space-y-3 text-sm text-gray-400">
+        <li><a class="hover:text-primary">Privacy Policy</a></li>
+        <li><a class="hover:text-primary">Terms of Service</a></li>
+        <li><a class="hover:text-primary">Refund Policy</a></li>
+        <li><a class="hover:text-primary">Security</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Bottom Bar -->
+  <div class="border-t border-borderDark">
+    <div class="max-w-7xl mx-auto px-6 py-6 flex flex-col md:flex-row items-center justify-between gap-4">
+      <p class="text-xs text-gray-500">
+        © 2026 FoodieX Technologies Pvt. Ltd. All rights reserved.
+      </p>
+
+      <p class="text-xs text-gray-500">
+        Built with performance, scalability & security in mind.
+      </p>
+    </div>
+  </div>
+</footer>
+
+<!-- ================= JS ================= -->
+<script>
+/* ================= DATA ================= */
+const data = [
+  { 
+    name: "Italiano Pizza", 
+    category: "Pizza", 
+    rating: "4.6", 
+    deliveryTime: "25-30 min",
+    deliveryFee: "₹40",
+    offer: "20% OFF",
+    img: "https://images.unsplash.com/photo-1513104890138-7c749659a591" 
+  },
+  { 
+    name: "Burger Hub", 
+    category: "Burger", 
+    rating: "4.4", 
+    deliveryTime: "20-25 min",
+    deliveryFee: "₹30",
+    offer: "Free Delivery",
+    img: "https://images.unsplash.com/photo-1568901346375-23c9450c58cd" 
+  },
+  { 
+    name: "Delhi Tadka", 
+    category: "Indian", 
+    rating: "4.7", 
+    deliveryTime: "30-35 min",
+    deliveryFee: "₹50",
+    offer: "15% OFF",
+    img: "https://images.unsplash.com/photo-1601050690597-df0568f70950" 
+  },
+  { 
+    name: "Dragon Wok", 
+    category: "Chinese", 
+    rating: "4.5", 
+    deliveryTime: "25-30 min",
+    deliveryFee: "₹35",
+    offer: "10% OFF",
+    img: "https://images.unsplash.com/photo-1544025162-d76694265947" 
+  },
+  { 
+    name: "Sweet Treats", 
+    category: "Dessert", 
+    rating: "4.8", 
+    deliveryTime: "15-20 min",
+    deliveryFee: "₹25",
+    offer: "Buy 1 Get 1",
+    img: "https://images.unsplash.com/photo-1551024601-bec78aea704b" 
+  },
+  { 
+    name: "Italiano Pizza", 
+    category: "Pizza", 
+    rating: "4.6", 
+    deliveryTime: "25-30 min",
+    deliveryFee: "₹40",
+    offer: "20% OFF",
+    img: "https://images.unsplash.com/photo-1513104890138-7c749659a591" 
+  },
+  { 
+    name: "Burger Hub", 
+    category: "Burger", 
+    rating: "4.4", 
+    deliveryTime: "20-25 min",
+    deliveryFee: "₹30",
+    offer: "Free Delivery",
+    img: "https://images.unsplash.com/photo-1568901346375-23c9450c58cd" 
+  },
+  { 
+    name: "Delhi Tadka", 
+    category: "Indian", 
+    rating: "4.7", 
+    deliveryTime: "30-35 min",
+    deliveryFee: "₹50",
+    offer: "15% OFF",
+    img: "https://images.unsplash.com/photo-1601050690597-df0568f70950" 
+  },
+  { 
+    name: "Dragon Wok", 
+    category: "Chinese", 
+    rating: "4.5", 
+    deliveryTime: "25-30 min",
+    deliveryFee: "₹35",
+    offer: "10% OFF",
+    img: "https://images.unsplash.com/photo-1544025162-d76694265947" 
+  },
+  { 
+    name: "Sweet Treats", 
+    category: "Dessert", 
+    rating: "4.8", 
+    deliveryTime: "15-20 min",
+    deliveryFee: "₹25",
+    offer: "Buy 1 Get 1",
+    img: "https://images.unsplash.com/photo-1551024601-bec78aea704b" 
+  },
+  { 
+    name: "Italiano Pizza", 
+    category: "Pizza", 
+    rating: "4.6", 
+    deliveryTime: "25-30 min",
+    deliveryFee: "₹40",
+    offer: "20% OFF",
+    img: "https://images.unsplash.com/photo-1513104890138-7c749659a591" 
+  },
+  { 
+    name: "Burger Hub", 
+    category: "Burger", 
+    rating: "4.4", 
+    deliveryTime: "20-25 min",
+    deliveryFee: "₹30",
+    offer: "Free Delivery",
+    img: "https://images.unsplash.com/photo-1568901346375-23c9450c58cd" 
+  },
+  { 
+    name: "Delhi Tadka", 
+    category: "Indian", 
+    rating: "4.7", 
+    deliveryTime: "30-35 min",
+    deliveryFee: "₹50",
+    offer: "15% OFF",
+    img: "https://images.unsplash.com/photo-1601050690597-df0568f70950" 
+  },
+  { 
+    name: "Dragon Wok", 
+    category: "Chinese", 
+    rating: "4.5", 
+    deliveryTime: "25-30 min",
+    deliveryFee: "₹35",
+    offer: "10% OFF",
+    img: "https://images.unsplash.com/photo-1544025162-d76694265947" 
+  },
+  { 
+    name: "Sweet Treats", 
+    category: "Dessert", 
+    rating: "4.8", 
+    deliveryTime: "15-20 min",
+    deliveryFee: "₹25",
+    offer: "Buy 1 Get 1",
+    img: "https://images.unsplash.com/photo-1551024601-bec78aea704b" 
+  },
+  { 
+    name: "Italiano Pizza", 
+    category: "Pizza", 
+    rating: "4.6", 
+    deliveryTime: "25-30 min",
+    deliveryFee: "₹40",
+    offer: "20% OFF",
+    img: "https://images.unsplash.com/photo-1513104890138-7c749659a591" 
+  },
+  { 
+    name: "Burger Hub", 
+    category: "Burger", 
+    rating: "4.4", 
+    deliveryTime: "20-25 min",
+    deliveryFee: "₹30",
+    offer: "Free Delivery",
+    img: "https://images.unsplash.com/photo-1568901346375-23c9450c58cd" 
+  },
+  { 
+    name: "Delhi Tadka", 
+    category: "Indian", 
+    rating: "4.7", 
+    deliveryTime: "30-35 min",
+    deliveryFee: "₹50",
+    offer: "15% OFF",
+    img: "https://images.unsplash.com/photo-1601050690597-df0568f70950" 
+  },
+  { 
+    name: "Dragon Wok", 
+    category: "Chinese", 
+    rating: "4.5", 
+    deliveryTime: "25-30 min",
+    deliveryFee: "₹35",
+    offer: "10% OFF",
+    img: "https://images.unsplash.com/photo-1544025162-d76694265947" 
+  },
+  { 
+    name: "Sweet Treats", 
+    category: "Dessert", 
+    rating: "4.8", 
+    deliveryTime: "15-20 min",
+    deliveryFee: "₹25",
+    offer: "Buy 1 Get 1",
+    img: "https://images.unsplash.com/photo-1551024601-bec78aea704b" 
+  },
+  { 
+    name: "Italiano Pizza", 
+    category: "Pizza", 
+    rating: "4.6", 
+    deliveryTime: "25-30 min",
+    deliveryFee: "₹40",
+    offer: "20% OFF",
+    img: "https://images.unsplash.com/photo-1513104890138-7c749659a591" 
+  },
+  { 
+    name: "Burger Hub", 
+    category: "Burger", 
+    rating: "4.4", 
+    deliveryTime: "20-25 min",
+    deliveryFee: "₹30",
+    offer: "Free Delivery",
+    img: "https://images.unsplash.com/photo-1568901346375-23c9450c58cd" 
+  },
+  { 
+    name: "Delhi Tadka", 
+    category: "Indian", 
+    rating: "4.7", 
+    deliveryTime: "30-35 min",
+    deliveryFee: "₹50",
+    offer: "15% OFF",
+    img: "https://images.unsplash.com/photo-1601050690597-df0568f70950" 
+  },
+  { 
+    name: "Dragon Wok", 
+    category: "Chinese", 
+    rating: "4.5", 
+    deliveryTime: "25-30 min",
+    deliveryFee: "₹35",
+    offer: "10% OFF",
+    img: "https://images.unsplash.com/photo-1544025162-d76694265947" 
+  },
+  { 
+    name: "Sweet Treats", 
+    category: "Dessert", 
+    rating: "4.8", 
+    deliveryTime: "15-20 min",
+    deliveryFee: "₹25",
+    offer: "Buy 1 Get 1",
+    img: "https://images.unsplash.com/photo-1551024601-bec78aea704b" 
+  },
+  { 
+    name: "Italiano Pizza", 
+    category: "Pizza", 
+    rating: "4.6", 
+    deliveryTime: "25-30 min",
+    deliveryFee: "₹40",
+    offer: "20% OFF",
+    img: "https://images.unsplash.com/photo-1513104890138-7c749659a591" 
+  },
+  { 
+    name: "Burger Hub", 
+    category: "Burger", 
+    rating: "4.4", 
+    deliveryTime: "20-25 min",
+    deliveryFee: "₹30",
+    offer: "Free Delivery",
+    img: "https://images.unsplash.com/photo-1568901346375-23c9450c58cd" 
+  },
+  { 
+    name: "Delhi Tadka", 
+    category: "Indian", 
+    rating: "4.7", 
+    deliveryTime: "30-35 min",
+    deliveryFee: "₹50",
+    offer: "15% OFF",
+    img: "https://images.unsplash.com/photo-1601050690597-df0568f70950" 
+  },
+  { 
+    name: "Dragon Wok", 
+    category: "Chinese", 
+    rating: "4.5", 
+    deliveryTime: "25-30 min",
+    deliveryFee: "₹35",
+    offer: "10% OFF",
+    img: "https://images.unsplash.com/photo-1544025162-d76694265947" 
+  },
+  { 
+    name: "Sweet Treats", 
+    category: "Dessert", 
+    rating: "4.8", 
+    deliveryTime: "15-20 min",
+    deliveryFee: "₹25",
+    offer: "Buy 1 Get 1",
+    img: "https://images.unsplash.com/photo-1551024601-bec78aea704b" 
+  },
+  { 
+    name: "Italiano Pizza", 
+    category: "Pizza", 
+    rating: "4.6", 
+    deliveryTime: "25-30 min",
+    deliveryFee: "₹40",
+    offer: "20% OFF",
+    img: "https://images.unsplash.com/photo-1513104890138-7c749659a591" 
+  },
+  { 
+    name: "Burger Hub", 
+    category: "Burger", 
+    rating: "4.4", 
+    deliveryTime: "20-25 min",
+    deliveryFee: "₹30",
+    offer: "Free Delivery",
+    img: "https://images.unsplash.com/photo-1568901346375-23c9450c58cd" 
+  },
+  { 
+    name: "Delhi Tadka", 
+    category: "Indian", 
+    rating: "4.7", 
+    deliveryTime: "30-35 min",
+    deliveryFee: "₹50",
+    offer: "15% OFF",
+    img: "https://images.unsplash.com/photo-1601050690597-df0568f70950" 
+  },
+  { 
+    name: "Dragon Wok", 
+    category: "Chinese", 
+    rating: "4.5", 
+    deliveryTime: "25-30 min",
+    deliveryFee: "₹35",
+    offer: "10% OFF",
+    img: "https://images.unsplash.com/photo-1544025162-d76694265947" 
+  },
+  { 
+    name: "Sweet Treats", 
+    category: "Dessert", 
+    rating: "4.8", 
+    deliveryTime: "15-20 min",
+    deliveryFee: "₹25",
+    offer: "Buy 1 Get 1",
+    img: "https://images.unsplash.com/photo-1551024601-bec78aea704b" 
+  },
+  { 
+    name: "Italiano Pizza", 
+    category: "Pizza", 
+    rating: "4.6", 
+    deliveryTime: "25-30 min",
+    deliveryFee: "₹40",
+    offer: "20% OFF",
+    img: "https://images.unsplash.com/photo-1513104890138-7c749659a591" 
+  },
+  { 
+    name: "Burger Hub", 
+    category: "Burger", 
+    rating: "4.4", 
+    deliveryTime: "20-25 min",
+    deliveryFee: "₹30",
+    offer: "Free Delivery",
+    img: "https://images.unsplash.com/photo-1568901346375-23c9450c58cd" 
+  },
+  { 
+    name: "Delhi Tadka", 
+    category: "Indian", 
+    rating: "4.7", 
+    deliveryTime: "30-35 min",
+    deliveryFee: "₹50",
+    offer: "15% OFF",
+    img: "https://images.unsplash.com/photo-1601050690597-df0568f70950" 
+  },
+  { 
+    name: "Dragon Wok", 
+    category: "Chinese", 
+    rating: "4.5", 
+    deliveryTime: "25-30 min",
+    deliveryFee: "₹35",
+    offer: "10% OFF",
+    img: "https://images.unsplash.com/photo-1544025162-d76694265947" 
+  },
+  { 
+    name: "Sweet Treats", 
+    category: "Dessert", 
+    rating: "4.8", 
+    deliveryTime: "15-20 min",
+    deliveryFee: "₹25",
+    offer: "Buy 1 Get 1",
+    img: "https://images.unsplash.com/photo-1551024601-bec78aea704b" 
+  },
+  { 
+    name: "Italiano Pizza", 
+    category: "Pizza", 
+    rating: "4.6", 
+    deliveryTime: "25-30 min",
+    deliveryFee: "₹40",
+    offer: "20% OFF",
+    img: "https://images.unsplash.com/photo-1513104890138-7c749659a591" 
+  },
+  { 
+    name: "Burger Hub", 
+    category: "Burger", 
+    rating: "4.4", 
+    deliveryTime: "20-25 min",
+    deliveryFee: "₹30",
+    offer: "Free Delivery",
+    img: "https://images.unsplash.com/photo-1568901346375-23c9450c58cd" 
+  },
+  { 
+    name: "Delhi Tadka", 
+    category: "Indian", 
+    rating: "4.7", 
+    deliveryTime: "30-35 min",
+    deliveryFee: "₹50",
+    offer: "15% OFF",
+    img: "https://images.unsplash.com/photo-1601050690597-df0568f70950" 
+  },
+  { 
+    name: "Dragon Wok", 
+    category: "Chinese", 
+    rating: "4.5", 
+    deliveryTime: "25-30 min",
+    deliveryFee: "₹35",
+    offer: "10% OFF",
+    img: "https://images.unsplash.com/photo-1544025162-d76694265947" 
+  },
+  { 
+    name: "Sweet Treats", 
+    category: "Dessert", 
+    rating: "4.8", 
+    deliveryTime: "15-20 min",
+    deliveryFee: "₹25",
+    offer: "Buy 1 Get 1",
+    img: "https://images.unsplash.com/photo-1551024601-bec78aea704b" 
+  },
+];
+
+const state = { category: "All", search: "" };
+
+const grid = document.getElementById("restaurantGrid");
+const emptyState = document.getElementById("emptyState");
+const searchInput = document.getElementById("searchInput");
+
+/* ================= RENDER ================= */
+function render() {
+  grid.innerHTML = "";
+
+  const filtered = data.filter(r =>
+    (state.category === "All" || r.category === state.category) &&
+    r.name.toLowerCase().includes(state.search)
+  );
+
+  emptyState.classList.toggle("hidden", filtered.length !== 0);
+
+  filtered.forEach(r => {
+    grid.innerHTML += `
+      <article class="bg-darkCard border border-borderDark rounded-xl overflow-hidden card-hover relative">
+
+        <!-- Offer Badge -->
+        <span class="absolute top-3 left-3 bg-primary text-black text-xs px-2 py-1 rounded">
+          ${r.offer}
+        </span>
+
+        <!-- Favorite Icon -->
+        <button onclick="toggleFavorite(this)" 
+          class="absolute top-3 right-3 bg-black/60 text-white w-8 h-8 rounded-full flex items-center justify-center hover:text-primary transition">
+          <i class="fa-regular fa-heart"></i>
+        </button>
+
+        <img src="${r.img}" class="w-full h-48 sm:h-40 object-cover" />
+
+        <div class="p-4 space-y-2">
+          <h4 class="font-semibold text-white text-lg">${r.name}</h4>
+
+          <div class="flex items-center justify-between text-sm text-gray-400">
+            <span>${r.category}</span>
+            <span class="text-green-400">⭐ ${r.rating}</span>
+          </div>
+
+          <div class="flex items-center justify-between text-xs text-gray-400 pt-2">
+            <span>⏱ ${r.deliveryTime}</span>
+            <span>🚚 ${r.deliveryFee}</span>
+          </div>
+
+          <!-- CTA -->
+          <button onclick="viewMenu('${r.name}')"
+            class="w-full mt-3 bg-primary text-black py-2 rounded-lg font-semibold hover:opacity-90 transition">
+            View Menu
+          </button>
+        </div>
+      </article>
+    `;
+  });
+}
+
+/* ================= FAVORITE ================= */
+function toggleFavorite(btn) {
+  const icon = btn.querySelector("i");
+  icon.classList.toggle("fa-regular");
+  icon.classList.toggle("fa-solid");
+  icon.classList.toggle("text-red-500");
+}
+
+/* ================= VIEW MENU ================= */
+function viewMenu(name) {
+  if (!name || typeof name !== "string") {
+    console.error("Invalid restaurant name");
+    return;
+  }
+
+  // Save selected restaurant
+  localStorage.setItem("selectedRestaurant", name.trim());
+
+  // Optional: store timestamp (useful later)
+  localStorage.setItem("menuOpenedAt", Date.now());
+
+  // Redirect to menu page
+  window.location.assign("menu.html");
+}
+
+/* ================= FILTER ================= */
+document.querySelectorAll(".filter-btn").forEach(btn => {
+  btn.classList.add("px-4","py-2","rounded-full","bg-darkCard","hover:bg-primary","hover:text-black","transition");
+
+  btn.addEventListener("click", () => {
+    document.querySelectorAll(".filter-btn")
+      .forEach(b => b.classList.remove("bg-primary","text-black"));
+
+    btn.classList.add("bg-primary","text-black");
+    state.category = btn.dataset.category;
+    render();
+  });
+});
+
+
+/* ================= MOBILE MENU ================= */
+const menuBtn = document.getElementById("menuBtn");
+const mobileMenu = document.getElementById("mobileMenu");
+
+menuBtn.addEventListener("click", () => {
+  mobileMenu.classList.toggle("hidden");
+
+  // Toggle icon between bars and close
+  const icon = menuBtn.querySelector("i");
+  icon.classList.toggle("fa-bars");
+  icon.classList.toggle("fa-xmark");
+});
+
+/* ================= SEARCH ================= */
+searchInput.addEventListener("input", e => {
+  state.search = e.target.value.toLowerCase();
+  render();
+});
+
+render();
+</script>
+
+</body>
+</html>
