@@ -1,486 +1,730 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en" class="scroll-smooth">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>mrohitgupta9</title>
-  <!-- Tailwind CDN -->
-  <script src="https://cdn.tailwindcss.com"></script>
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
-        integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
-        crossorigin="anonymous" referrerpolicy="no-referrer"/>
-</head>
-<body class="flex flex-col min-h-screen font-sans bg-gray-900 text-gray-200 transition-colors duration-500">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>mrohitgupta9</title>
 
-<!-- Navbar -->
-<nav class="bg-gray-800 sticky top-0 shadow z-50 transition-colors duration-500">
-  <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
-    <!-- Logo -->
-    <a href="index.html" class="flex items-center gap-2 text-4xl font-bold text-orange-500">
-      <i class="fa-solid fa-laptop-code text-orange-400 text-3xl"></i>
-      mrohitgupta9
-    </a>
+    <!-- Tailwind CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
 
-    <!-- Desktop Menu -->
-    <ul class="hidden md:flex space-x-6 text-orange-500 font-medium">
-      <li><a href="index.html" class="hover:text-blue-400 transition">Home</a></li>
-      <li><a href="about.html" class="hover:text-blue-400 transition">About</a></li>
-      <li><a href="projects.html" class="hover:text-blue-400 transition">Projects</a></li>
-      <li><a href="services.html" class="hover:text-blue-400 transition">Services</a></li>
-      <li><a href="contact.html" class="hover:text-blue-400 transition">Contact</a></li>
-    </ul>
+    <!-- AOS -->
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css"
+      rel="stylesheet" />
 
-    <!-- Action & Mobile Menu Button -->
-    <div class="flex items-center space-x-4">
-      <a href="#" class="hidden md:inline-block bg-gradient-to-r from-orange-500 to-orange-600 text-white px-5 py-2 rounded-lg font-medium hover:from-indigo-600 hover:to-orange-500 transition">Get Started</a>
+    <!-- FontAwesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+      integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer" />
 
-      <!-- Mobile Menu Button -->
-      <div class="md:hidden">
-        <button id="mobile-menu-btn" class="text-gray-200 focus:outline-none">
-          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-              d="M4 6h16M4 12h16M4 18h16" />
-          </svg>
-        </button>
-      </div>
-    </div>
-  </div>
-
-  <!-- Mobile Menu -->
-  <div id="mobile-menu" class="hidden md:hidden bg-gray-900 shadow-lg transition-all duration-300">
-    <ul class="flex flex-col space-y-3 px-6 py-6 text-center">
-      <li><a href="index.html" class="block text-gray-200 hover:text-blue-400 transition py-2 ">Home</a></li>
-      <li><a href="about.html" class="block text-gray-200 hover:text-blue-400 transition py-2">About</a></li>
-      <li><a href="projects.html" class="block text-gray-200 hover:text-blue-400 transition py-2">Projects</a></li>
-      <li><a href="services.html" class="block text-gray-200 hover:text-blue-400 transition py-2">Services</a></li>
-      <li><a href="contact.html" class="block text-gray-200 hover:text-blue-400 transition py-2">Contact</a></li>
-      <li>
-        <a href="contact.html" class="block bg-gradient-to-r from-orange-500 to-orange-600 text-white px-5 py-3 rounded-lg font-medium hover:from-indigo-600 hover:to-orange-500 transition">
-          Get Started
+    <style>
+      .active {
+        background-color: #f97316 !important; /* Tailwind orange-500 */
+        color: white !important;
+      }
+    </style>
+  </head>
+  <body
+    class="flex flex-col min-h-screen font-sans bg-gray-900 text-gray-200 transition-colors duration-500">
+    <!-- Navbar -->
+    <nav
+      class="bg-gray-800 sticky top-0 shadow z-50 transition-colors duration-500">
+      <div
+        class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+        <!-- Logo -->
+        <a
+          href="index.html"
+          class="flex items-center gap-2 text-4xl font-bold text-orange-500">
+          <i class="fa-solid fa-laptop-code text-orange-400 text-3xl"></i>
+          mrohitgupta9
         </a>
-      </li>
-    </ul>
-  </div>
-</nav>
-  
-<!-- ================= MAIN ================= -->
-<main class="flex-grow">
 
-<!-- ================= PROJECTS PART I ================= -->
-<section id="projects" class="max-w-7xl mx-auto px-6 py-20">
-    <h2 class="text-3xl sm:text-4xl font-bold text-center mb-6" data-aos="fade-up">
-    Our Projects
-  </h2>
-  <h2 class="text-3xl sm:text-4xl font-bold text-center mb-6 text-orange-500" data-aos="fade-up">
-    Our Projects Using Html And Tailwind
-  </h2>
+        <!-- Desktop Menu -->
+        <ul class="hidden md:flex space-x-6 text-orange-500 font-medium">
+          <li>
+            <a href="index.html" class="hover:text-blue-400 transition">Home</a>
+          </li>
+          <li>
+            <a href="about.html" class="hover:text-blue-400 transition"
+              >About</a
+            >
+          </li>
+          <li>
+            <a href="projects.html" class="hover:text-blue-400 transition"
+              >Projects</a
+            >
+          </li>
+          <li>
+            <a href="services.html" class="hover:text-blue-400 transition"
+              >Services</a
+            >
+          </li>
+          <li>
+            <a href="contact.html" class="hover:text-blue-400 transition"
+              >Contact</a
+            >
+          </li>
+        </ul>
 
-  <p class="max-w-3xl mx-auto text-center text-gray-400 mb-14" data-aos="fade-up">
-    A collection of modern, scalable, and business-ready web solutions built with
-    performance, usability, and clean design in mind.
-  </p>
+        <!-- Action & Mobile Menu Button -->
+        <div class="flex items-center space-x-4">
+          <a
+            href="contact.html"
+            class="hidden md:inline-block bg-gradient-to-r from-orange-500 to-orange-600 text-white px-5 py-2 rounded-lg font-medium hover:from-indigo-600 hover:to-orange-500 transition">
+            Get Started
+          </a>
 
-  <div class="grid gap-8 md:grid-cols-3 sm:grid-cols-2 grid-cols-1">
-
-    <!-- CARD 1 -->
-    <div class="bg-gray-800 p-6 rounded-lg shadow hover:shadow-xl transition group" data-aos="fade-up" data-aos-delay="150">
-      <div class="flex items-center mb-4">
-        <i class="fa-solid fa-chart-line text-yellow-400 text-2xl mr-3"></i>
-        <h3 class="text-xl font-semibold">Admin Dashboard</h3>
+          <div class="md:hidden">
+            <button
+              id="mobile-menu-btn"
+              class="text-gray-200 focus:outline-none">
+              <svg
+                class="w-6 h-6"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24">
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M4 6h16M4 12h16M4 18h16" />
+              </svg>
+            </button>
+          </div>
+        </div>
       </div>
-      <p class="text-gray-400 mb-4">AModern responsive website, User & content management and Interactive admin dashboard</p>
-      <a href="dashboard-overview/index.html" class="inline-flex items-center text-blue-400 font-medium group-hover:gap-2 transition-all">
-        View Project <span class="group-hover:translate-x-1 transition-transform">→</span>
-      </a>
-    </div>
 
-    <!-- card 2 -->
-    <div class="bg-gray-800 p-6 rounded-lg shadow hover:shadow-xl transition group" data-aos="fade-up" data-aos-delay="150">
-    <div class="flex items-center mb-4">
-      <i class="fa-solid fa-utensils text-red-500 text-2xl mr-3"></i>
-      <h3 class="text-xl font-semibold">Food Delivery App</h3>
-    </div>
-    <p class="text-gray-400 mb-4">App for ordering food from restaurants with real-time tracking.</p>
-    <a href="/food-app/index.html" class="inline-flex items-center text-blue-400 font-medium group-hover:gap-2 transition-all">
-      View Project <span class="group-hover:translate-x-1 transition-transform">→</span>
-    </a>
-  </div>
-
-    <!-- CARD 3 -->
-    <div class="bg-gray-800 p-6 rounded-lg shadow hover:shadow-xl transition group" data-aos="fade-up" data-aos-delay="150">
-      <div class="flex items-center mb-4">
-        <i class="fa-solid fa-bolt text-blue-400 text-2xl mr-3"></i>
-        <h3 class="text-xl font-semibold">EnergyM</h3>
+      <!-- Mobile Menu -->
+      <div
+        id="mobile-menu"
+        class="hidden md:hidden bg-gray-900 shadow-lg transition-all duration-300">
+        <ul class="flex flex-col space-y-3 px-6 py-6 text-center">
+          <li>
+            <a
+              href="index.html"
+              class="block text-gray-200 hover:text-blue-400 transition py-2"
+              >Home</a
+            >
+          </li>
+          <li>
+            <a
+              href="about.html"
+              class="block text-gray-200 hover:text-blue-400 transition py-2"
+              >About</a
+            >
+          </li>
+          <li>
+            <a
+              href="projects.html"
+              class="block text-gray-200 hover:text-blue-400 transition py-2"
+              >Projects</a
+            >
+          </li>
+          <li>
+            <a
+              href="services.html"
+              class="block text-gray-200 hover:text-blue-400 transition py-2"
+              >Services</a
+            >
+          </li>
+          <li>
+            <a
+              href="contact.html"
+              class="block text-gray-200 hover:text-blue-400 transition py-2"
+              >Contact</a
+            >
+          </li>
+          <li>
+            <a
+              href="contact.html"
+              class="block bg-gradient-to-r from-orange-500 to-orange-600 text-white px-5 py-3 rounded-lg font-medium hover:from-indigo-600 hover:to-orange-500 transition"
+              >Get Started</a
+            >
+          </li>
+        </ul>
       </div>
-      <p class="text-gray-400 mb-4 space-y-2">
-        <span class="flex items-center gap-2">
-          Modern responsive website, User & content management and Interactive admin dashboard
-        </span>
-      </p>
-      <a href="../EnergyM/index.html" class="inline-flex items-center text-blue-400 font-medium group-hover:gap-2 transition-all">
-        View Project <span class="group-hover:translate-x-1 transition-transform">→</span>
-      </a>
-    </div>
+    </nav>
 
-    <!-- CARD 4 -->
-    <div class="bg-gray-800 p-6 rounded-lg shadow hover:shadow-xl transition group" data-aos="fade-up" data-aos-delay="150">
-      <div class="flex items-center mb-4">
-        <i class="fa-solid fa-cart-shopping text-red-400 text-2xl mr-3"></i>
-        <h3 class="text-xl font-semibold">E-commerce Platform</h3>
+    <!-- Projects Section -->
+    <section id="projects" class="bg-gray-900 py-10">
+      <div class="max-w-7xl mx-auto px-6">
+        <h2
+          class="text-3xl sm:text-4xl font-bold text-center mb-6 text-orange-500"
+          data-aos="fade-up">
+          My Projects
+        </h2>
+
+        <p
+          class="max-w-3xl mx-auto text-center text-gray-400 mb-12"
+          data-aos="fade-up">
+          A showcase of real-world projects built using modern web technologies, focusing on performance, scalability, and exceptional user experience.
+        </p>
+
+        <!-- Filter Buttons -->
+        <div
+          class="flex flex-wrap justify-center gap-4 mb-12"
+          data-aos="fade-up">
+          <button
+            class="filter-btn px-4 py-2 rounded-lg bg-orange-500 text-white active"
+            data-filter="all">
+            All
+          </button>
+          <button
+            class="filter-btn px-4 py-2 rounded-lg bg-gray-700 text-white hover:bg-orange-500"
+            data-filter="frontend">
+            Frontend
+          </button>
+          <button
+            class="filter-btn px-4 py-2 rounded-lg bg-gray-700 text-white hover:bg-orange-500"
+            data-filter="dashboard">
+            Dashboard
+          </button>
+          <button
+            class="filter-btn px-4 py-2 rounded-lg bg-gray-700 text-white hover:bg-orange-500"
+            data-filter="fullstack">
+            Full Stack
+          </button>
+        </div>
+
+        <!-- Projects Grid -->
+        <div
+          class="grid gap-8 md:grid-cols-3 sm:grid-cols-2 grid-cols-1"
+          id="projects-grid">
+          <!-- 12 Project Cards -->
+          <!-- Frontend (4) -->
+          <div
+            class="project-card bg-gray-800 p-7 rounded-xl border border-gray-700 hover:border-orange-500 hover:-translate-y-2 hover:shadow-lg hover:shadow-orange-500/20 transition group"
+            data-category="frontend"
+            data-aos="fade-up">
+            <div class="flex items-center mb-4">
+              <div
+                class="w-12 h-12 flex items-center justify-center bg-gray-700 rounded-full mr-4">
+                <i class="fa-solid fa-utensils text-red-500 text-xl"></i>
+              </div>
+              <h3 class="text-xl font-semibold">Food Delivery App</h3>
+            </div>
+            <p class="text-gray-400 mb-5">
+              Platform with restaurant listings, cart system, and real-time
+              order tracking.
+            </p>
+            <a
+              href="#"
+              class="inline-flex items-center text-orange-400 font-medium group-hover:gap-2 transition-all">
+              View Project
+              <span class="group-hover:translate-x-1 transition-transform"
+                >→</span
+              >
+            </a>
+          </div>
+
+          <div
+            class="project-card bg-gray-800 p-7 rounded-xl border border-gray-700 hover:border-orange-500 hover:-translate-y-2 hover:shadow-lg hover:shadow-orange-500/20 transition group"
+            data-category="frontend"
+            data-aos="fade-up">
+            <div class="flex items-center mb-4">
+              <div
+                class="w-12 h-12 flex items-center justify-center bg-gray-700 rounded-full mr-4">
+                <i class="fa-solid fa-user text-orange-400 text-xl"></i>
+              </div>
+              <h3 class="text-xl font-semibold">Portfolio Website</h3>
+            </div>
+            <p class="text-gray-400 mb-5">
+              Personal developer portfolio showcasing projects, skills, and
+              experience.
+            </p>
+            <a
+              href="#"
+              class="inline-flex items-center text-orange-400 font-medium group-hover:gap-2 transition-all">
+              View Project
+              <span class="group-hover:translate-x-1 transition-transform"
+                >→</span
+              >
+            </a>
+          </div>
+
+          <div
+            class="project-card bg-gray-800 p-7 rounded-xl border border-gray-700 hover:border-orange-500 hover:-translate-y-2 hover:shadow-lg hover:shadow-orange-500/20 transition group"
+            data-category="frontend"
+            data-aos="fade-up">
+            <div class="flex items-center mb-4">
+              <div
+                class="w-12 h-12 flex items-center justify-center bg-gray-700 rounded-full mr-4">
+                <i class="fa-solid fa-globe text-blue-400 text-xl"></i>
+              </div>
+              <h3 class="text-xl font-semibold">Blog Website</h3>
+            </div>
+            <p class="text-gray-400 mb-5">
+              Responsive blog platform with rich text editor and SEO
+              optimization.
+            </p>
+            <a
+              href="#"
+              class="inline-flex items-center text-orange-400 font-medium group-hover:gap-2 transition-all">
+              View Project
+              <span class="group-hover:translate-x-1 transition-transform"
+                >→</span
+              >
+            </a>
+          </div>
+
+          <div
+            class="project-card bg-gray-800 p-7 rounded-xl border border-gray-700 hover:border-orange-500 hover:-translate-y-2 hover:shadow-lg hover:shadow-orange-500/20 transition group"
+            data-category="frontend"
+            data-aos="fade-up">
+            <div class="flex items-center mb-4">
+              <div
+                class="w-12 h-12 flex items-center justify-center bg-gray-700 rounded-full mr-4">
+                <i class="fa-solid fa-envelope text-pink-400 text-xl"></i>
+              </div>
+              <h3 class="text-xl font-semibold">Newsletter Platform</h3>
+            </div>
+            <p class="text-gray-400 mb-5">
+              Web app for creating and sending newsletters to subscribers.
+            </p>
+            <a
+              href="#"
+              class="inline-flex items-center text-orange-400 font-medium group-hover:gap-2 transition-all">
+              View Project
+              <span class="group-hover:translate-x-1 transition-transform"
+                >→</span
+              >
+            </a>
+          </div>
+
+          <!-- Dashboard (4) -->
+          <div
+            class="project-card bg-gray-800 p-7 rounded-xl border border-gray-700 hover:border-orange-500 hover:-translate-y-2 hover:shadow-lg hover:shadow-orange-500/20 transition group"
+            data-category="dashboard"
+            data-aos="fade-up">
+            <div class="flex items-center mb-4">
+              <div
+                class="w-12 h-12 flex items-center justify-center bg-gray-700 rounded-full mr-4">
+                <i class="fa-solid fa-chart-line text-yellow-400 text-xl"></i>
+              </div>
+              <h3 class="text-xl font-semibold">Admin Dashboard</h3>
+            </div>
+            <p class="text-gray-400 mb-5">
+              Modern admin panel with user management and analytics.
+            </p>
+            <a
+              href="#"
+              class="inline-flex items-center text-orange-400 font-medium group-hover:gap-2 transition-all">
+              View Project
+              <span class="group-hover:translate-x-1 transition-transform"
+                >→</span
+              >
+            </a>
+          </div>
+
+          <div
+            class="project-card bg-gray-800 p-7 rounded-xl border border-gray-700 hover:border-orange-500 hover:-translate-y-2 hover:shadow-lg hover:shadow-orange-500/20 transition group"
+            data-category="dashboard"
+            data-aos="fade-up">
+            <div class="flex items-center mb-4">
+              <div
+                class="w-12 h-12 flex items-center justify-center bg-gray-700 rounded-full mr-4">
+                <i class="fa-solid fa-server text-green-400 text-xl"></i>
+              </div>
+              <h3 class="text-xl font-semibold">Analytics Dashboard</h3>
+            </div>
+            <p class="text-gray-400 mb-5">
+              Dashboard for real-time analytics and monitoring.
+            </p>
+            <a
+              href="#"
+              class="inline-flex items-center text-orange-400 font-medium group-hover:gap-2 transition-all">
+              View Project
+              <span class="group-hover:translate-x-1 transition-transform"
+                >→</span
+              >
+            </a>
+          </div>
+
+          <div
+            class="project-card bg-gray-800 p-7 rounded-xl border border-gray-700 hover:border-orange-500 hover:-translate-y-2 hover:shadow-lg hover:shadow-orange-500/20 transition group"
+            data-category="dashboard"
+            data-aos="fade-up">
+            <div class="flex items-center mb-4">
+              <div
+                class="w-12 h-12 flex items-center justify-center bg-gray-700 rounded-full mr-4">
+                <i class="fa-solid fa-database text-indigo-400 text-xl"></i>
+              </div>
+              <h3 class="text-xl font-semibold">Database Management Panel</h3>
+            </div>
+            <p class="text-gray-400 mb-5">
+              Panel to monitor and manage database operations efficiently.
+            </p>
+            <a
+              href="#"
+              class="inline-flex items-center text-orange-400 font-medium group-hover:gap-2 transition-all">
+              View Project
+              <span class="group-hover:translate-x-1 transition-transform"
+                >→</span
+              >
+            </a>
+          </div>
+
+          <div
+            class="project-card bg-gray-800 p-7 rounded-xl border border-gray-700 hover:border-orange-500 hover:-translate-y-2 hover:shadow-lg hover:shadow-orange-500/20 transition group"
+            data-category="dashboard"
+            data-aos="fade-up">
+            <div class="flex items-center mb-4">
+              <div
+                class="w-12 h-12 flex items-center justify-center bg-gray-700 rounded-full mr-4">
+                <i class="fa-solid fa-chart-pie text-pink-400 text-xl"></i>
+              </div>
+              <h3 class="text-xl font-semibold">Finance Dashboard</h3>
+            </div>
+            <p class="text-gray-400 mb-5">
+              Dashboard to track financial metrics and reports.
+            </p>
+            <a
+              href="#"
+              class="inline-flex items-center text-orange-400 font-medium group-hover:gap-2 transition-all">
+              View Project
+              <span class="group-hover:translate-x-1 transition-transform"
+                >→</span
+              >
+            </a>
+          </div>
+
+          <!-- Fullstack (4) -->
+          <div
+            class="project-card bg-gray-800 p-7 rounded-xl border border-gray-700 hover:border-orange-500 hover:-translate-y-2 hover:shadow-lg hover:shadow-orange-500/20 transition group"
+            data-category="fullstack"
+            data-aos="fade-up">
+            <div class="flex items-center mb-4">
+              <div
+                class="w-12 h-12 flex items-center justify-center bg-gray-700 rounded-full mr-4">
+                <i class="fa-solid fa-bolt text-blue-400 text-xl"></i>
+              </div>
+              <h3 class="text-xl font-semibold">EnergyM</h3>
+            </div>
+            <p class="text-gray-400 mb-5">
+              Energy management platform for tracking power usage and analytics.
+            </p>
+            <a
+              href="#"
+              class="inline-flex items-center text-orange-400 font-medium group-hover:gap-2 transition-all">
+              View Project
+              <span class="group-hover:translate-x-1 transition-transform"
+                >→</span
+              >
+            </a>
+          </div>
+
+          <div
+            class="project-card bg-gray-800 p-7 rounded-xl border border-gray-700 hover:border-orange-500 hover:-translate-y-2 hover:shadow-lg hover:shadow-orange-500/20 transition group"
+            data-category="fullstack"
+            data-aos="fade-up">
+            <div class="flex items-center mb-4">
+              <div
+                class="w-12 h-12 flex items-center justify-center bg-gray-700 rounded-full mr-4">
+                <i class="fa-solid fa-shopping-cart text-green-400 text-xl"></i>
+              </div>
+              <h3 class="text-xl font-semibold">E-commerce Platform</h3>
+            </div>
+            <p class="text-gray-400 mb-5">
+              Full shopping platform with cart and payment integration.
+            </p>
+            <a
+              href="#"
+              class="inline-flex items-center text-orange-400 font-medium group-hover:gap-2 transition-all">
+              View Project
+              <span class="group-hover:translate-x-1 transition-transform"
+                >→</span
+              >
+            </a>
+          </div>
+
+          <div
+            class="project-card bg-gray-800 p-7 rounded-xl border border-gray-700 hover:border-orange-500 hover:-translate-y-2 hover:shadow-lg hover:shadow-orange-500/20 transition group"
+            data-category="fullstack"
+            data-aos="fade-up">
+            <div class="flex items-center mb-4">
+              <div
+                class="w-12 h-12 flex items-center justify-center bg-gray-700 rounded-full mr-4">
+                <i
+                  class="fa-solid fa-graduation-cap text-purple-400 text-xl"></i>
+              </div>
+              <h3 class="text-xl font-semibold">Online Learning Platform</h3>
+            </div>
+            <p class="text-gray-400 mb-5">
+              Platform offering courses, student dashboards, and progress
+              tracking.
+            </p>
+            <a
+              href="#"
+              class="inline-flex items-center text-orange-400 font-medium group-hover:gap-2 transition-all">
+              View Project
+              <span class="group-hover:translate-x-1 transition-transform"
+                >→</span
+              >
+            </a>
+          </div>
+
+          <div
+            class="project-card bg-gray-800 p-7 rounded-xl border border-gray-700 hover:border-orange-500 hover:-translate-y-2 hover:shadow-lg hover:shadow-orange-500/20 transition group"
+            data-category="fullstack"
+            data-aos="fade-up">
+            <div class="flex items-center mb-4">
+              <div
+                class="w-12 h-12 flex items-center justify-center bg-gray-700 rounded-full mr-4">
+                <i class="fa-solid fa-code text-indigo-400 text-xl"></i>
+              </div>
+              <h3 class="text-xl font-semibold">Fullstack Blog App</h3>
+            </div>
+            <p class="text-gray-400 mb-5">
+              Blog platform with authentication, CRUD operations and REST API.
+            </p>
+            <a
+              href="#"
+              class="inline-flex items-center text-orange-400 font-medium group-hover:gap-2 transition-all">
+              View Project
+              <span class="group-hover:translate-x-1 transition-transform"
+                >→</span
+              >
+            </a>
+          </div>
+        </div>
       </div>
-      <p class="text-gray-400 mb-4">Online store with secure checkout system.</p>
-      <a href="#" class="inline-flex items-center text-blue-400 font-medium group-hover:gap-2 transition-all">
-        View Project <span class="group-hover:translate-x-1 transition-transform">→</span>
-      </a>
-    </div>
+    </section>
 
-    <!-- CARD 5 -->
-    <div class="bg-gray-800 p-6 rounded-lg shadow hover:shadow-xl transition group" data-aos="fade-up" data-aos-delay="150">
-      <div class="flex items-center mb-4">
-        <i class="fa-solid fa-bullhorn text-purple-400 text-2xl mr-3"></i>
-        <h3 class="text-xl font-semibold">Landing Page</h3>
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-gray-300 border-t border-gray-800">
+      <div
+        class="max-w-7xl mx-auto px-6 py-16 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-10">
+        <!-- About -->
+        <div>
+          <a
+            href="index.html"
+            class="flex items-center gap-2 text-3xl font-bold text-orange-500">
+            <i class="fa-solid fa-laptop-code text-orange-400"></i>
+            mrohitgupta9
+          </a>
+
+          <p class="text-gray-400 mt-4 leading-relaxed">
+            Delivering modern web solutions that combine creativity, performance
+            and clean design to help businesses grow online.
+          </p>
+        </div>
+
+        <!-- Quick Links -->
+        <div>
+          <h4 class="font-semibold mb-5 text-orange-500">Quick Links</h4>
+
+          <ul class="space-y-3">
+            <li>
+              <a href="index.html" class="hover:text-orange-400 transition">
+                Home
+              </a>
+            </li>
+
+            <li>
+              <a href="about.html" class="hover:text-orange-400 transition">
+                About
+              </a>
+            </li>
+
+            <li>
+              <a href="projects.html" class="hover:text-orange-400 transition">
+                Projects
+              </a>
+            </li>
+
+            <li>
+              <a href="services.html" class="hover:text-orange-400 transition">
+                Services
+              </a>
+            </li>
+
+            <li>
+              <a href="contact.html" class="hover:text-orange-400 transition">
+                Contact
+              </a>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Services -->
+        <div>
+          <h4 class="font-semibold mb-5 text-orange-500">Services</h4>
+
+          <ul class="space-y-3">
+            <li>
+              <a
+                href="#"
+                onclick="showService('Web Development')"
+                class="hover:text-orange-400 transition">
+                Web Development
+              </a>
+            </li>
+
+            <li>
+              <a
+                href="#"
+                onclick="showService('UI/UX Design')"
+                class="hover:text-orange-400 transition">
+                UI / UX Design
+              </a>
+            </li>
+
+            <li>
+              <a
+                href="#"
+                onclick="showService('SEO Optimization')"
+                class="hover:text-orange-400 transition">
+                SEO Optimization
+              </a>
+            </li>
+
+            <li>
+              <a
+                href="#"
+                onclick="showService('E-commerce Development')"
+                class="hover:text-orange-400 transition">
+                E-commerce
+              </a>
+            </li>
+
+            <li>
+              <a
+                href="#"
+                onclick="showService('Tech Consulting')"
+                class="hover:text-orange-400 transition">
+                Consulting
+              </a>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Contact -->
+        <div>
+          <h4 class="font-semibold mb-5 text-orange-500">Contact</h4>
+
+          <p class="text-sm mb-3 flex items-center">
+            <i class="fa-solid fa-envelope mr-3 text-orange-400"></i>
+            mrohitgupta9@gmail.com
+          </p>
+
+          <p class="text-sm mb-6 flex items-center">
+            <i class="fa-solid fa-phone mr-3 text-orange-400"></i>
+            +91 9115095844
+          </p>
+
+          <h4 class="font-semibold mb-4 text-white">Follow Me</h4>
+
+          <div class="flex gap-4 text-lg">
+            <a
+              href="https://www.facebook.com/mrohitgupta9"
+              target="_blank"
+              class="w-10 h-10 flex items-center justify-center rounded-full bg-gray-800 hover:bg-orange-500 transition">
+              <i class="fab fa-facebook-f"></i>
+            </a>
+
+            <a
+              href="https://www.instagram.com/mrohitgupta9"
+              target="_blank"
+              class="w-10 h-10 flex items-center justify-center rounded-full bg-gray-800 hover:bg-orange-500 transition">
+              <i class="fab fa-instagram"></i>
+            </a>
+
+            <a
+              href="https://www.twitter.com/mrohitgupta9"
+              target="_blank"
+              class="w-10 h-10 flex items-center justify-center rounded-full bg-gray-800 hover:bg-orange-500 transition">
+              <i class="fab fa-twitter"></i>
+            </a>
+
+            <a
+              href="https://www.linkedin.com/in/mrohitgupta9"
+              target="_blank"
+              class="w-10 h-10 flex items-center justify-center rounded-full bg-gray-800 hover:bg-orange-500 transition">
+              <i class="fab fa-linkedin-in"></i>
+            </a>
+
+            <a
+              href="https://github.com/mrohitgupta9"
+              target="_blank"
+              class="w-10 h-10 flex items-center justify-center rounded-full bg-gray-800 hover:bg-orange-500 transition">
+              <i class="fab fa-github"></i>
+            </a>
+          </div>
+        </div>
       </div>
-      <p class="text-gray-400 mb-4">High-conversion marketing landing page.</p>
-      <a href="#" class="inline-flex items-center text-blue-400 font-medium group-hover:gap-2 transition-all">
-        View Project <span class="group-hover:translate-x-1 transition-transform">→</span>
-      </a>
-    </div>
 
-    <!-- CARD 6 -->
-    <div class="bg-gray-800 p-6 rounded-lg shadow hover:shadow-xl transition group" data-aos="fade-up" data-aos-delay="150">
-      <div class="flex items-center mb-4">
-        <i class="fa-solid fa-people-group text-pink-400 text-2xl mr-3"></i>
-        <h3 class="text-xl font-semibold">Freelance Marketplace</h3>
+      <!-- Bottom Copyright -->
+      <div
+        class="border-t border-gray-800 text-center py-5 text-sm text-gray-400">
+        © 2026 <span class="text-orange-500">mrohitgupta9</span>. All rights
+        reserved.
       </div>
-      <p class="text-gray-400 mb-4">Platform connecting freelancers and clients.</p>
-      <a href="#" class="inline-flex items-center text-blue-400 font-medium group-hover:gap-2 transition-all">
-        View Project <span class="group-hover:translate-x-1 transition-transform">→</span>
-      </a>
-    </div>
 
-    <!-- CARD 7 -->
-    <div class="bg-gray-800 p-6 rounded-lg shadow hover:shadow-xl transition group" data-aos="fade-up" data-aos-delay="200">
-      <div class="flex items-center mb-4">
-        <i class="fa-solid fa-pen-nib text-blue-500 text-2xl mr-3"></i>
-        <h3 class="text-xl font-semibold">Blog Management System</h3>
+      <!-- Modal -->
+      <div
+        id="serviceModal"
+        class="fixed inset-0 bg-black bg-opacity-60 flex items-center justify-center hidden z-50">
+        <div
+          class="bg-gray-900 p-7 rounded-xl max-w-lg w-full border border-gray-700 relative">
+          <button
+            onclick="closeModal()"
+            class="absolute right-4 top-3 text-gray-400 hover:text-white text-xl">
+            ×
+          </button>
+
+          <h3 id="serviceTitle" class="text-2xl font-bold text-orange-500 mb-4">
+            Service Title
+          </h3>
+
+          <div
+            id="serviceDesc"
+            class="text-gray-300 leading-relaxed max-h-72 overflow-y-auto pr-2"></div>
+
+          <button
+            onclick="closeModal()"
+            class="mt-6 w-full bg-orange-500 hover:bg-orange-600 transition py-2 rounded">
+            Close
+          </button>
+        </div>
       </div>
-      <p class="text-gray-400 mb-4">
-        Content publishing platform with admin controls and SEO optimization.
-      </p>
-      <a href="#" class="inline-flex items-center text-blue-400 font-medium group-hover:gap-2 transition-all">
-        View Project <span class="group-hover:translate-x-1 transition-transform">→</span>
-      </a>
-    </div>
+    </footer>
 
-    <!-- CARD 8 -->
-    <div class="bg-gray-800 p-6 rounded-lg shadow hover:shadow-xl transition group" data-aos="fade-up" data-aos-delay="200">
-      <div class="flex items-center mb-4">
-        <i class="fa-solid fa-briefcase text-green-500 text-2xl mr-3"></i>
-        <h3 class="text-xl font-semibold">Job Portal Website</h3>
-      </div>
-      <p class="text-gray-400 mb-4">
-        Job listing and candidate application system for recruiters.
-      </p>
-      <a href="#" class="inline-flex items-center text-blue-400 font-medium group-hover:gap-2 transition-all">
-        View Project <span class="group-hover:translate-x-1 transition-transform">→</span>
-      </a>
-    </div>
+    <!-- AOS JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
 
-    <!-- CARD 9 -->
-    <div class="bg-gray-800 p-6 rounded-lg shadow hover:shadow-xl transition group" data-aos="fade-up" data-aos-delay="200">
-      <div class="flex items-center mb-4">
-        <i class="fa-solid fa-graduation-cap text-yellow-400 text-2xl mr-3"></i>
-        <h3 class="text-xl font-semibold">Online Learning Platform</h3>
-      </div>
-      <p class="text-gray-400 mb-4">
-        E-learning system with courses, videos, and progress tracking.
-      </p>
-      <a href="#" class="inline-flex items-center text-blue-400 font-medium group-hover:gap-2 transition-all">
-        View Project <span class="group-hover:translate-x-1 transition-transform">→</span>
-      </a>
-    </div>
+    <!-- Filter + Animation Script -->
+    <script>
+      AOS.init({ once: true, duration: 600, easing: "ease-in-out" });
 
-    <!-- CARD 10 -->
-    <div class="bg-gray-800 p-6 rounded-lg shadow hover:shadow-xl transition group" data-aos="fade-up" data-aos-delay="200">
-      <div class="flex items-center mb-4">
-        <i class="fa-solid fa-building text-green-400 text-2xl mr-3"></i>
-        <h3 class="text-xl font-semibold">Business Website</h3>
-      </div>
-      <p class="text-gray-400 mb-4">Corporate website focused on branding and conversions.</p>
-      <a href="#" class="inline-flex items-center text-blue-400 font-medium group-hover:gap-2 transition-all">
-        View Project <span class="group-hover:translate-x-1 transition-transform">→</span>
-      </a>
-    </div>
+      const filterBtns = document.querySelectorAll(".filter-btn");
+      const projectCards = document.querySelectorAll(".project-card");
 
-<!-- CARD 11 -->
-  <div class="bg-gray-800 p-6 rounded-lg shadow hover:shadow-xl transition group" data-aos="fade-up" data-aos-delay="250">
-    <div class="flex items-center mb-4">
-      <i class="fa-solid fa-car text-green-500 text-2xl mr-3"></i>
-      <h3 class="text-xl font-semibold">Car Rental Platform</h3>
-    </div>
-    <p class="text-gray-400 mb-4">Platform to book and manage car rentals online.</p>
-    <a href="#" class="inline-flex items-center text-blue-400 font-medium group-hover:gap-2 transition-all">
-      View Project <span class="group-hover:translate-x-1 transition-transform">→</span>
-    </a>
-  </div>
+      filterBtns.forEach((btn) => {
+        btn.addEventListener("click", () => {
+          filterBtns.forEach((b) => b.classList.remove("active"));
+          btn.classList.add("active");
 
-<!-- CARD 12 -->
-  <div class="bg-gray-800 p-6 rounded-lg shadow hover:shadow-xl transition group" data-aos="fade-up" data-aos-delay="250">
-    <div class="flex items-center mb-4">
-      <i class="fa-solid fa-heart text-pink-500 text-2xl mr-3"></i>
-      <h3 class="text-xl font-semibold">Fitness Tracker</h3>
-    </div>
-    <p class="text-gray-400 mb-4">Track workouts, diet, and progress with personalized reports.</p>
-    <a href="#" class="inline-flex items-center text-blue-400 font-medium group-hover:gap-2 transition-all">
-      View Project <span class="group-hover:translate-x-1 transition-transform">→</span>
-    </a>
-  </div>
+          const filter = btn.dataset.filter;
+          let delayCounter = 0;
 
-<!-- CARD 13 -->
-  <div class="bg-gray-800 p-6 rounded-lg shadow hover:shadow-xl transition group" data-aos="fade-up" data-aos-delay="300">
-    <div class="flex items-center mb-4">
-      <i class="fa-solid fa-plane text-blue-500 text-2xl mr-3"></i>
-      <h3 class="text-xl font-semibold">Flight Booking Website</h3>
-    </div>
-    <p class="text-gray-400 mb-4">Search, compare, and book flights with user-friendly interface.</p>
-    <a href="#" class="inline-flex items-center text-blue-400 font-medium group-hover:gap-2 transition-all">
-      View Project <span class="group-hover:translate-x-1 transition-transform">→</span>
-    </a>
-  </div>
+          projectCards.forEach((card) => {
+            if (filter === "all" || card.dataset.category === filter) {
+              card.style.display = "block";
+              card.setAttribute("data-aos", "fade-up");
+              card.setAttribute("data-aos-delay", delayCounter);
+              delayCounter += 500; // stagger 0.2s
+            } else {
+              card.style.display = "none";
+            }
+          });
 
-  <!-- CARD 14 -->
-  <div class="bg-gray-800 p-6 rounded-lg shadow hover:shadow-xl transition group" data-aos="fade-up" data-aos-delay="350">
-    <div class="flex items-center mb-4">
-      <i class="fa-solid fa-music text-purple-500 text-2xl mr-3"></i>
-      <h3 class="text-xl font-semibold">Music Streaming App</h3>
-    </div>
-    <p class="text-gray-400 mb-4">Stream music online, create playlists, and follow artists.</p>
-    <a href="#" class="inline-flex items-center text-blue-400 font-medium group-hover:gap-2 transition-all">
-      View Project <span class="group-hover:translate-x-1 transition-transform">→</span>
-    </a>
-  </div>
-
-  <!-- CARD 15 -->
-  <div class="bg-gray-800 p-6 rounded-lg shadow hover:shadow-xl transition group" data-aos="fade-up" data-aos-delay="400">
-    <div class="flex items-center mb-4">
-      <i class="fa-solid fa-film text-yellow-500 text-2xl mr-3"></i>
-      <h3 class="text-xl font-semibold">Movie Review Website</h3>
-    </div>
-    <p class="text-gray-400 mb-4">Reviews, ratings, and trailers for latest movies.</p>
-    <a href="#" class="inline-flex items-center text-blue-400 font-medium group-hover:gap-2 transition-all">
-      View Project <span class="group-hover:translate-x-1 transition-transform">→</span>
-    </a>
-  </div>
-
-  <!-- CARD 16 -->
-  <div class="bg-gray-800 p-6 rounded-lg shadow hover:shadow-xl transition group" data-aos="fade-up" data-aos-delay="450">
-    <div class="flex items-center mb-4">
-      <i class="fa-solid fa-money-bill-wave text-green-500 text-2xl mr-3"></i>
-      <h3 class="text-xl font-semibold">Banking / FinTech App</h3>
-    </div>
-    <p class="text-gray-400 mb-4">Online banking platform with transactions, balance, and reports.</p>
-    <a href="#" class="inline-flex items-center text-blue-400 font-medium group-hover:gap-2 transition-all">
-      View Project <span class="group-hover:translate-x-1 transition-transform">→</span>
-    </a>
-  </div>
-
-  <!-- CARD 17 -->
-  <div class="bg-gray-800 p-6 rounded-lg shadow hover:shadow-xl transition group" data-aos="fade-up" data-aos-delay="500">
-    <div class="flex items-center mb-4">
-      <i class="fa-solid fa-hotel text-red-500 text-2xl mr-3"></i>
-      <h3 class="text-xl font-semibold">Hotel Booking Website</h3>
-    </div>
-    <p class="text-gray-400 mb-4">Search and book hotels online with reviews and ratings.</p>
-    <a href="#" class="inline-flex items-center text-blue-400 font-medium group-hover:gap-2 transition-all">
-      View Project <span class="group-hover:translate-x-1 transition-transform">→</span>
-    </a>
-  </div>
-
-  <!-- CARD 18 -->
-  <div class="bg-gray-800 p-6 rounded-lg shadow hover:shadow-xl transition group" data-aos="fade-up" data-aos-delay="550">
-    <div class="flex items-center mb-4">
-      <i class="fa-solid fa-paint-brush text-pink-500 text-2xl mr-3"></i>
-      <h3 class="text-xl font-semibold">Graphic Design Portfolio</h3>
-    </div>
-    <p class="text-gray-400 mb-4">Showcase of illustrations, UI kits, and digital artwork.</p>
-    <a href="#" class="inline-flex items-center text-blue-400 font-medium group-hover:gap-2 transition-all">
-      View Project <span class="group-hover:translate-x-1 transition-transform">→</span>
-    </a>
-  </div>
-</div>
-</section>
-</main>
-
-<!-- ================= FOOTER ================= -->
-<!-- Footer -->
-<footer class="bg-gray-800 text-gray-300 border-t border-gray-700 relative z-10">
-  <div class="max-w-7xl mx-auto px-6 py-12 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8">
-    
-    <!-- About -->
-    <div>
-      <a href="index.html" class="flex items-center gap-2 text-4xl font-bold text-orange-500">
-        <i class="fa-solid fa-laptop-code text-orange-400 text-2xl"></i>
-        mrohitgupta9
-      </a>
-      <p class="text-gray-400 mt-2">Delivering professional web solutions that blend creativity, performance, and modern design to help individuals and businesses grow online.</p>
-    </div>
-
-    <!-- Quick Links -->
-    <div>
-      <h4 class="font-semibold mb-4 text-orange-500">Quick Links</h4>
-      <ul class="space-y-2">
-        <li><a href="index.html" class="hover:text-blue-400 transition">Home</a></li>
-        <li><a href="about.html" class="hover:text-blue-400 transition">About</a></li>
-        <li><a href="projects.html" class="hover:text-blue-400 transition">Projects</a></li>
-        <li><a href="services.html" class="hover:text-blue-400 transition">Services</a></li>
-        <li><a href="contact.html" class="hover:text-blue-400 transition">Contact</a></li>
-      </ul>
-    </div>
-
-    <!-- Services with Modal -->
-    <div>
-      <h4 class="font-semibold mb-4 text-orange-500">Services</h4>
-      <ul class="space-y-2">
-        <li><a href="#" class="hover:text-blue-400 transition cursor-pointer" onclick="showService('Web Development')">Web Development</a></li>
-        <li><a href="#" class="hover:text-blue-400 transition cursor-pointer" onclick="showService('UI/UX Design')">UI/UX Design</a></li>
-        <li><a href="#" class="hover:text-blue-400 transition cursor-pointer" onclick="showService('SEO Optimization')">SEO Optimization</a></li>
-        <li><a href="#" class="hover:text-blue-400 transition cursor-pointer" onclick="showService('E-commerce')">E-commerce</a></li>
-        <li><a href="#" class="hover:text-blue-400 transition cursor-pointer" onclick="showService('Cybersecurity')">Cybersecurity</a></li>
-      </ul>
-    </div>
-
-    <!-- Contact & Socials -->
-    <div>
-      <h4 class="font-semibold mb-4 text-orange-500">Contact</h4>
-      <p class="text-sm mb-1"><i class="fa-solid fa-envelope mr-2 text-blue-400"></i>mrohitgupta9@gmail.com</p>
-      <p class="text-sm"><i class="fa-solid fa-phone mr-2 text-blue-400"></i>+91 9115095844</p>
-
-      <h4 class="font-semibold mb-4 mt-4 text-white">Follow Me</h4>
-      <div class="flex space-x-4 mt-5 text-lg">
-        <a href="https://www.facebook.com/mrohitgupta9" target="_blank" class="hover:text-blue-400 transition text-orange-500"><i class="fab fa-facebook-f"></i></a>
-        <a href="https://www.instagram.com/mrohitgupta9" target="_blank" class="hover:text-pink-400 transition text-orange-500"><i class="fab fa-instagram"></i></a>
-        <a href="https://www.twitter.com/mrohitgupta9" target="_blank" class="hover:text-sky-400 transition text-orange-500"><i class="fab fa-twitter"></i></a>
-        <a href="https://www.linkedin.com/in/mrohitgupta9" target="_blank" class="hover:text-blue-500 transition text-orange-500"><i class="fab fa-linkedin-in"></i></a>
-        <a href="https://github.com/mrohitgupta9" target="_blank" class="hover:text-gray-100 transition text-orange-500"><i class="fab fa-github"></i></a>
-      </div>
-    </div>
-  </div>
-
-  <!-- Copyright -->
-  <div class="border-t border-gray-700 py-4 text-center text-sm">© 2025 mrohitgupta9. All rights reserved.</div>
-
-  <!-- Modal -->
-  <div id="serviceModal" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center hidden z-50 transition-opacity duration-300">
-    <div class="bg-gray-900 text-gray-200 p-6 rounded-lg max-w-lg w-full relative shadow-lg transform scale-95 opacity-0 transition-all duration-300">
-      <button onclick="closeModal()" class="absolute top-3 right-3 text-gray-400 hover:text-white text-lg font-bold">&times;</button>
-      <h3 id="serviceTitle" class="text-2xl font-bold mb-3 text-orange-500">Service Title</h3>
-      <div id="serviceDesc" class="text-gray-300 leading-relaxed max-h-72 overflow-y-auto pr-2"></div>
-      <button onclick="closeModal()" class="mt-5 px-4 py-2 bg-orange-500 hover:bg-orange-600 rounded text-white font-medium w-full">Close</button>
-    </div>
-  </div>
-</footer>
-
-   <!-- Modal JS -->
-  <script>
-    const descriptions = {
-      "Web Development": `We build responsive, modern websites using the latest technologies to boost your online presence. 
-      <br><br>
-      <strong>Features Include:</strong>
-      <ul class="list-disc pl-5">
-        <li>Responsive & Mobile-Friendly Design</li>
-        <li>SEO-optimized Code</li>
-        <li>Performance & Speed Optimization</li>
-        <li>Custom CMS Integration</li>
-        <li>E-commerce Capability</li>
-      </ul>
-      <br>
-      Our goal is to make your website not just beautiful, but fast, secure, and scalable.`,
-      
-      "UI/UX Design": `Designing intuitive and engaging user interfaces for web and mobile applications. 
-      <br><br>
-      <strong>Our Approach:</strong>
-      <ul class="list-disc pl-5">
-        <li>User-Centered Design</li>
-        <li>Wireframing & Prototyping</li>
-        <li>High-Fidelity Mockups</li>
-        <li>Accessibility & Usability Standards</li>
-      </ul>
-      <br>
-      We ensure your users have a seamless and enjoyable experience.`,
-
-      "SEO Optimization": `Enhancing your website to rank higher on search engines and attract organic traffic.
-      <br><br>
-      <strong>What We Do:</strong>
-      <ul class="list-disc pl-5">
-        <li>Keyword Research & Strategy</li>
-        <li>On-page & Off-page SEO</li>
-        <li>Content Optimization</li>
-        <li>Performance & Mobile SEO</li>
-        <li>Analytics & Reporting</li>
-      </ul>
-      <br>
-      Our aim is to drive quality traffic and improve your online visibility.`,
-
-      "E-commerce": `Custom online stores with secure payment gateways and user-friendly shopping experiences.
-      <br><br>
-      <strong>Capabilities:</strong>
-      <ul class="list-disc pl-5">
-        <li>Product Catalog & Inventory Management</li>
-        <li>Secure Checkout & Payment Integration</li>
-        <li>Order Management & Analytics</li>
-        <li>Responsive Mobile Shopping</li>
-        <li>Promotions & Discounts Setup</li>
-      </ul>
-      <br>
-      We make online shopping smooth for your customers.`,
-      "Cybersecurity": `Protecting your digital assets with robust security solutions and proactive threat management.
-      <br><br>
-      <strong>Capabilities:</strong>
-      <ul class="list-disc pl-5">
-        <li>Website & Application Security Audits</li>
-        <li>Secure Authentication & Access Control</li>
-        <li>Data Encryption & Privacy Protection</li>
-        <li>Vulnerability Assessment & Penetration Testing (VAPT)</li>
-        <li>Firewall, Malware & Threat Prevention</li>
-      </ul>
-      <br>
-      We help keep your systems, data, and users safe from modern cyber threats.`,
-    };
-
-    function showService(title) {
-      const modal = document.getElementById('serviceModal');
-      document.getElementById('serviceTitle').innerText = title;
-      document.getElementById('serviceDesc').innerHTML = descriptions[title];
-      modal.classList.remove('hidden');
-      // Fade-in + scale animation
-      setTimeout(() => {
-        modal.querySelector('div').classList.remove('opacity-0','scale-95');
-        modal.querySelector('div').classList.add('opacity-100','scale-100');
-      }, 10);
-    }
-
-    function closeModal() {
-      const modalContent = document.getElementById('serviceModal').querySelector('div');
-      modalContent.classList.remove('opacity-100','scale-100');
-      modalContent.classList.add('opacity-0','scale-95');
-      setTimeout(() => {
-        document.getElementById('serviceModal').classList.add('hidden');
-      }, 300);
-    }
-  </script>
-</body>
-</html>
-
-
-<!-- ================= SCRIPTS ================= -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
-  <script>
-    AOS.init({ duration: 1000, once: true });
-
-    const btn = document.getElementById('mobile-menu-btn');
-    const menu = document.getElementById('mobile-menu');
-    btn.addEventListener('click', () => menu.classList.toggle('hidden'));
-  </script>
-</body>
+          AOS.refresh();
+        });
+      });
+    </script>
+  </body>
 </html>

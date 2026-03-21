@@ -138,44 +138,57 @@
       </div>
     </nav>
 
-    <!-- Mobile Menu Toggle Script -->
-    <script>
-      btn.addEventListener("click", () => {
-        menu.classList.toggle("hidden");
-      });
-    </script>
-
     <!-- Hero Section -->
-    <section class="relative bg-gray-900 overflow-hidden py-20">
+    <section class="relative bg-gray-900 py-24 overflow-hidden">
+      <!-- Background Glow -->
       <div
-        class="max-w-7xl mx-auto px-6 flex flex-col-reverse lg:flex-row items-center lg:justify-between">
+        class="absolute top-0 left-1/2 w-[500px] h-[500px] bg-orange-500 opacity-10 blur-[150px] -translate-x-1/2"></div>
+
+      <div
+        class="max-w-7xl mx-auto px-6 flex flex-col-reverse lg:flex-row items-center justify-between gap-12">
+        <!-- Text Content -->
         <div class="lg:w-1/2 text-center lg:text-left" data-aos="fade-right">
-          <h1 class="text-4xl sm:text-5xl font-bold mb-4">
-            Hi, I'm <span class="text-orange-500">Rohit Gupta</span>
+          <h1
+            class="text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight mb-6">
+            Hi, I'm
+            <span class="text-orange-500">Rohit Gupta</span>
           </h1>
-          <p class="text-gray-300 text-base sm:text-lg mb-6">
-            Freelance Web Developer & UI Engineer focused on building modern,
-            responsive, and user-centric digital experiences.
+
+          <p
+            class="text-gray-300 text-base sm:text-lg mb-8 max-w-xl mx-auto lg:mx-0">
+            Freelance Web Developer & UI Engineer passionate about building
+            modern, scalable, and user-focused digital products with clean
+            design and powerful performance.
           </p>
+
+          <!-- Buttons -->
           <div
-            class="flex flex-col sm:flex-row justify-center lg:justify-start gap-4">
+            class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
             <button
               onclick="openHireModal()"
-              class="px-6 py-3 bg-gradient-to-r from-orange-500 to-orange-600 text-white rounded-lg font-semibold hover:from-orange-600 hover:to-orange-600 transition">
+              class="px-7 py-3 bg-gradient-to-r from-orange-500 to-orange-600 text-white font-semibold rounded-lg shadow-lg hover:scale-105 transition">
               Hire Me
             </button>
+
             <a
               href="projects.html"
-              class="px-6 py-3 bg-gray-800 border border-gray-700 rounded-lg hover:border-blue-500 transition border-orange-500"
-              >View Projects</a
-            >
+              class="px-7 py-3 bg-gray-800 border border-gray-700 text-white rounded-lg hover:border-orange-500 hover:text-orange-500 transition">
+              View Projects
+            </a>
           </div>
         </div>
-        <div class="lg:w-1/2 mb-10 lg:mb-0" data-aos="fade-left">
-          <img
-            src="images/mrohitgupta9.jpg"
-            class="mx-auto rounded-full border-4 border-orange-500 w-64 h-64 object-cover"
-            alt="Rohit Gupta" />
+
+        <!-- Profile Image -->
+        <div class="lg:w-1/2 flex justify-center" data-aos="fade-left">
+          <div class="relative">
+            <div
+              class="absolute inset-0 rounded-full bg-orange-500 blur-2xl opacity-20"></div>
+
+            <img
+              src="images/mrohitgupta9.jpg"
+              alt="Rohit Gupta"
+              class="relative w-64 h-64 sm:w-72 sm:h-72 object-cover rounded-full border-4 border-orange-500 shadow-xl" />
+          </div>
         </div>
       </div>
     </section>
@@ -238,7 +251,7 @@
             WhatsApp
           </a>
 
-          <a 
+          <a
             href="./images/Rohit Resume.pdf"
             target="_blank"
             class="px-5 py-2 bg-gray-800 border border-gray-700 rounded-md hover:border-orange-500 transition">
@@ -248,544 +261,972 @@
       </div>
     </div>
 
-    <section id="projects" class="max-w-7xl mx-auto px-6 py-20">
-      <h2
-        class="text-3xl sm:text-4xl font-bold text-center mb-6 text-orange-500"
-        data-aos="fade-up">
-        Our Projects
-      </h2>
-      <p
-        class="max-w-3xl mx-auto text-center text-gray-400 mb-14"
-        data-aos="fade-up">
-        A collection of modern, scalable, and business-ready web solutions built
-        with performance, usability, and clean design in mind.
-      </p>
+    <!-- Skills & Tech Stack -->
+    <section class="bg-gray-900 py-6">
+      <div class="max-w-7xl mx-auto px-6">
+        <h2
+          class="text-3xl sm:text-4xl font-bold text-center text-orange-500 mb-6">
+          Skills & Tech Stack
+        </h2>
 
-      <div class="grid gap-8 md:grid-cols-3 sm:grid-cols-2 grid-cols-1">
-        <!-- CARD 1 -->
-    <div class="bg-gray-800 p-6 rounded-lg shadow hover:shadow-xl transition group" data-aos="fade-up" data-aos-delay="150">
-      <div class="flex items-center mb-4">
-        <i class="fa-solid fa-chart-line text-yellow-400 text-2xl mr-3"></i>
-        <h3 class="text-xl font-semibold">Admin Dashboard</h3>
+        <p class="max-w-3xl mx-auto text-center text-gray-400 mb-16">
+          Technologies and tools I use to design, develop and deploy modern web
+          applications with performance, scalability and great user experience.
+        </p>
+
+        <div
+          class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-8">
+          <!-- HTML -->
+          <div class="skill-card">
+            <img
+              src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" />
+            <p>HTML5</p>
+          </div>
+
+          <!-- CSS -->
+          <div class="skill-card">
+            <img
+              src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" />
+            <p>CSS3</p>
+          </div>
+
+          <!-- Tailwind -->
+          <div class="skill-card">
+            <img
+              src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-original.svg" />
+            <p>Tailwind</p>
+          </div>
+
+          <!-- JavaScript -->
+          <div class="skill-card">
+            <img
+              src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" />
+            <p>JavaScript</p>
+          </div>
+
+          <!-- React -->
+          <div class="skill-card">
+            <img
+              src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" />
+            <p>React</p>
+          </div>
+
+          <!-- Python -->
+          <div class="skill-card">
+            <img
+              src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" />
+            <p>Python</p>
+          </div>
+
+          <!-- MongoDB -->
+          <div class="skill-card">
+            <img
+              src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg" />
+            <p>MongoDB</p>
+          </div>
+
+          <!-- Git -->
+          <div class="skill-card">
+            <img
+              src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" />
+            <p>Git</p>
+          </div>
+
+          <!-- GitHub -->
+          <div class="skill-card">
+            <img
+              src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" />
+            <p>GitHub</p>
+          </div>
+
+          <!-- VS Code -->
+          <div class="skill-card">
+            <img
+              src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vscode/vscode-original.svg" />
+            <p>VS Code</p>
+          </div>
+          <!-- Linux -->
+        </div>
       </div>
-      <p class="text-gray-400 mb-4">AModern responsive website, User & content management and Interactive admin dashboard</p>
-      <a href="dashboard-overview/index.html" class="inline-flex items-center text-blue-400 font-medium group-hover:gap-2 transition-all">
-        View Project <span class="group-hover:translate-x-1 transition-transform">→</span>
-      </a>
-    </div>
+    </section>
 
-    <!-- card 2 -->
-    <div class="bg-gray-800 p-6 rounded-lg shadow hover:shadow-xl transition group" data-aos="fade-up" data-aos-delay="150">
-    <div class="flex items-center mb-4">
-      <i class="fa-solid fa-utensils text-red-500 text-2xl mr-3"></i>
-      <h3 class="text-xl font-semibold">Food Delivery App</h3>
-    </div>
-    <p class="text-gray-400 mb-4">App for ordering food from restaurants with real-time tracking.</p>
-    <a href="/food-app/index.html" class="inline-flex items-center text-blue-400 font-medium group-hover:gap-2 transition-all">
-      View Project <span class="group-hover:translate-x-1 transition-transform">→</span>
-    </a>
-  </div>
+    <style>
+      .skill-card {
+        background: #1f2937;
+        padding: 28px;
+        border-radius: 14px;
+        text-align: center;
+        border: 1px solid #374151;
+        transition: all 0.35s ease;
+        cursor: pointer;
+      }
 
-    <!-- CARD 3 -->
-    <div class="bg-gray-800 p-6 rounded-lg shadow hover:shadow-xl transition group" data-aos="fade-up" data-aos-delay="150">
-      <div class="flex items-center mb-4">
-        <i class="fa-solid fa-bolt text-blue-400 text-2xl mr-3"></i>
-        <h3 class="text-xl font-semibold">EnergyM</h3>
+      .skill-card:hover {
+        transform: translateY(-10px) scale(1.05);
+        border-color: #f97316;
+        box-shadow: 0 15px 30px rgba(249, 115, 22, 0.35);
+      }
+
+      .skill-card img {
+        height: 55px;
+        margin: auto;
+        margin-bottom: 12px;
+      }
+
+      .skill-card p {
+        color: #d1d5db;
+        font-size: 14px;
+        font-weight: 500;
+      }
+    </style>
+
+    <!-- Technologies & Companies I Trust -->
+    <section class="bg-gray-900 py-10 overflow-hidden">
+      <div class="max-w-7xl mx-auto px-6">
+        <h2
+          class="text-3xl sm:text-4xl font-bold text-center text-orange-500 mb-6">
+          Technologies & Companies I Trust
+        </h2>
+
+        <p class="text-gray-400 text-center max-w-2xl mx-auto mb-14">
+          Technologies and platforms that inspire my development journey and
+          power the tools I use to build modern applications.
+        </p>
+
+        <!-- LOGO SLIDER -->
+        <div class="logo-slider mb-12">
+          <div class="logo-track">
+            <img
+              src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/google/google-original.svg" />
+            <img
+              src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/microsoft/microsoft-original.svg" />
+            <img
+              src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/amazonwebservices/amazonwebservices-original-wordmark.svg" />
+            <img
+              src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" />
+            <img
+              src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" />
+            <img
+              src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" />
+            <img
+              src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" />
+            <img
+              src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" />
+            <img
+              src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" />
+            <img
+              src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg" />
+
+            <!-- duplicate logos for smooth infinite animation -->
+
+            <img
+              src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/google/google-original.svg" />
+            <img
+              src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/microsoft/microsoft-original.svg" />
+            <img
+              src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/amazonwebservices/amazonwebservices-original-wordmark.svg" />
+            <img
+              src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" />
+            <img
+              src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" />
+            <img
+              src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" />
+          </div>
+        </div>
+
+        <!-- TECHNOLOGY BUTTONS -->
+        <div class="flex flex-wrap justify-center gap-4 mb-12">
+          <button
+            class="px-5 py-2 bg-gray-800 border border-gray-700 rounded-full text-sm hover:bg-orange-500 hover:text-white transition">
+            Google
+          </button>
+
+          <button
+            class="px-5 py-2 bg-gray-800 border border-gray-700 rounded-full text-sm hover:bg-orange-500 hover:text-white transition">
+            Microsoft
+          </button>
+
+          <button
+            class="px-5 py-2 bg-gray-800 border border-gray-700 rounded-full text-sm hover:bg-orange-500 hover:text-white transition">
+            AWS
+          </button>
+
+          <button
+            class="px-5 py-2 bg-gray-800 border border-gray-700 rounded-full text-sm hover:bg-orange-500 hover:text-white transition">
+            React
+          </button>
+
+          <button
+            class="px-5 py-2 bg-gray-800 border border-gray-700 rounded-full text-sm hover:bg-orange-500 hover:text-white transition">
+            Node.js
+          </button>
+
+          <button
+            class="px-5 py-2 bg-gray-800 border border-gray-700 rounded-full text-sm hover:bg-orange-500 hover:text-white transition">
+            GitHub
+          </button>
+
+          <button
+            class="px-5 py-2 bg-gray-800 border border-gray-700 rounded-full text-sm hover:bg-orange-500 hover:text-white transition">
+            JavaScript
+          </button>
+
+          <button
+            class="px-5 py-2 bg-gray-800 border border-gray-700 rounded-full text-sm hover:bg-orange-500 hover:text-white transition">
+            MongoDB
+          </button>
+        </div>
+
+        <!-- CTA BUTTON -->
+        <div class="text-center">
+          <a
+            href="./projects.html"
+            class="inline-block px-8 py-3 bg-orange-500 hover:bg-orange-600 rounded-lg font-semibold text-white transition">
+            View My Projects
+          </a>
+        </div>
       </div>
-      <p class="text-gray-400 mb-4 space-y-2">
-        <span class="flex items-center gap-2">
-          Modern responsive website, User & content management and Interactive admin dashboard
-        </span>
-      </p>
-      <a href="../EnergyM/index.html" class="inline-flex items-center text-blue-400 font-medium group-hover:gap-2 transition-all">
-        View Project <span class="group-hover:translate-x-1 transition-transform">→</span>
-      </a>
-    </div>
+    </section>
 
+    <style>
+      .logo-slider {
+        overflow: hidden;
+        position: relative;
+        width: 100%;
+      }
 
-        <!-- CARD 4 -->
-        <div
-          class="bg-gray-800 p-6 rounded-lg shadow hover:shadow-xl transition group"
-          data-aos="fade-up"
-          data-aos-delay="150">
-          <div class="flex items-center mb-4">
-            <i class="fa-solid fa-cart-shopping text-red-400 text-2xl mr-3"></i>
-            <h3 class="text-xl font-semibold">E-commerce Platform</h3>
+      .logo-track {
+        display: flex;
+        gap: 70px;
+        width: max-content;
+        animation: scroll 25s linear infinite;
+        align-items: center;
+      }
+
+      .logo-slider:hover .logo-track {
+        animation-play-state: paused;
+      }
+
+      .logo-track img {
+        height: 45px;
+        opacity: 0.7;
+        transition: all 0.3s ease;
+      }
+
+      .logo-track img:hover {
+        opacity: 1;
+        transform: scale(1.2);
+      }
+
+      @keyframes scroll {
+        0% {
+          transform: translateX(0);
+        }
+        100% {
+          transform: translateX(-50%);
+        }
+      }
+    </style>
+
+    <!-- Experience & Education Section -->
+    <section class="py-10 bg-gray-900">
+      <div class="max-w-6xl mx-auto px-6">
+        <!-- Heading -->
+        <h2
+          class="text-3xl sm:text-4xl font-bold text-center mb-6 text-orange-500"
+          data-aos="fade-up">
+          Experience & Education
+        </h2>
+
+        <p
+          class="max-w-3xl mx-auto text-center text-gray-400 mb-16"
+          data-aos="fade-up">
+          A journey of continuous learning, hands-on projects, and real-world
+          experience in web development, software engineering, and modern
+          technology stacks.
+        </p>
+
+        <!-- Timeline -->
+        <div class="relative border-l border-gray-700 max-w-3xl mx-auto">
+          <!-- Item 1 -->
+          <div class="mb-12 ml-6 relative" data-aos="fade-up">
+            <span
+              class="absolute -left-3 flex items-center justify-center w-6 h-6 bg-orange-500 rounded-full"></span>
+
+            <div
+              class="bg-gray-800 p-6 rounded-xl border border-gray-700 hover:border-orange-500 hover:shadow-lg hover:shadow-orange-500/20 transition">
+              <h3 class="text-xl font-semibold mb-1">
+                B.Tech Computer Science
+              </h3>
+
+              <p class="text-orange-400 text-sm mb-2">2022 – 2026</p>
+
+              <p class="text-gray-300">
+                Currently pursuing Computer Science with focus on Web
+                Development, Software Engineering and modern technologies.
+              </p>
+            </div>
           </div>
-          <p class="text-gray-400 mb-4">
-            Online store with secure checkout system.
-          </p>
-          <a
-            href="#"
-            class="inline-flex items-center text-blue-400 font-medium group-hover:gap-2 transition-all">
-            View Project
-            <span class="group-hover:translate-x-1 transition-transform"
-              >→</span
-            >
-          </a>
+
+          <!-- Item 2 -->
+          <div class="mb-12 ml-6 relative" data-aos="fade-up">
+            <span
+              class="absolute -left-3 flex items-center justify-center w-6 h-6 bg-orange-500 rounded-full"></span>
+
+            <div
+              class="bg-gray-800 p-6 rounded-xl border border-gray-700 hover:border-orange-500 hover:shadow-lg hover:shadow-orange-500/20 transition">
+              <h3 class="text-xl font-semibold mb-1">Frontend Web Developer</h3>
+
+              <p class="text-orange-400 text-sm mb-2">Freelance</p>
+
+              <p class="text-gray-300">
+                Building responsive websites using HTML, Tailwind CSS,
+                JavaScript and modern frameworks.
+              </p>
+            </div>
+          </div>
+
+          <!-- Item 3 -->
+          <div class="ml-6 relative" data-aos="fade-up">
+            <span
+              class="absolute -left-3 flex items-center justify-center w-6 h-6 bg-orange-500 rounded-full"></span>
+
+            <div
+              class="bg-gray-800 p-6 rounded-xl border border-gray-700 hover:border-orange-500 hover:shadow-lg hover:shadow-orange-500/20 transition">
+              <h3 class="text-xl font-semibold mb-1">UI / UX Projects</h3>
+
+              <p class="text-orange-400 text-sm mb-2">Personal Projects</p>
+
+              <p class="text-gray-300">
+                Designed multiple modern dashboards and web applications
+                focusing on performance, usability and clean user interface.
+              </p>
+            </div>
+          </div>
         </div>
+      </div>
+    </section>
 
-        <!-- CARD 5 -->
-        <div
-          class="bg-gray-800 p-6 rounded-lg shadow hover:shadow-xl transition group"
-          data-aos="fade-up"
-          data-aos-delay="250">
-          <div class="flex items-center mb-4">
-            <i class="fa-solid fa-people-group text-pink-400 text-2xl mr-3"></i>
-            <h3 class="text-xl font-semibold">Freelance Marketplace</h3>
-          </div>
-          <p class="text-gray-400 mb-4">
-            Platform connecting freelancers and clients.
-          </p>
-          <a
-            href="#"
-            class="inline-flex items-center text-blue-400 font-medium group-hover:gap-2 transition-all">
-            View Project
-            <span class="group-hover:translate-x-1 transition-transform"
-              >→</span
-            >
-          </a>
-        </div>
+    <!-- Projects Section -->
+    <section id="projects" class="bg-gray-900 py-10">
+      <div class="max-w-7xl mx-auto px-6">
+        <h2
+          class="text-3xl sm:text-4xl font-bold text-center mb-6 text-orange-500"
+          data-aos="fade-up">
+          My Projects
+        </h2>
 
-        <!-- CARD 6 -->
-        <div
-          class="bg-gray-800 p-6 rounded-lg shadow hover:shadow-xl transition group"
-          data-aos="fade-up"
-          data-aos-delay="300">
-          <div class="flex items-center mb-4">
-            <i class="fa-solid fa-pen-nib text-blue-500 text-2xl mr-3"></i>
-            <h3 class="text-xl font-semibold">Blog Management System</h3>
-          </div>
-          <p class="text-gray-400 mb-4">
-            Content publishing platform with admin controls and SEO
-            optimization.
-          </p>
-          <a
-            href="#"
-            class="inline-flex items-center text-blue-400 font-medium group-hover:gap-2 transition-all">
-            View Project
-            <span class="group-hover:translate-x-1 transition-transform"
-              >→</span
-            >
-          </a>
-        </div>
+        <p
+          class="max-w-3xl mx-auto text-center text-gray-400 mb-16"
+          data-aos="fade-up">
+          A showcase of real-world projects built using modern web technologies,
+          focusing on performance, scalability, and exceptional user experience.
+        </p>
 
-        <!-- CARD 7 -->
-        <div
-          class="bg-gray-800 p-6 rounded-lg shadow hover:shadow-xl transition group"
-          data-aos="fade-up"
-          data-aos-delay="350">
-          <div class="flex items-center mb-4">
-            <i class="fa-solid fa-briefcase text-green-500 text-2xl mr-3"></i>
-            <h3 class="text-xl font-semibold">Job Portal Website</h3>
-          </div>
-          <p class="text-gray-400 mb-4">
-            Job listing and candidate application system for recruiters.
-          </p>
-          <a
-            href="#"
-            class="inline-flex items-center text-blue-400 font-medium group-hover:gap-2 transition-all">
-            View Project
-            <span class="group-hover:translate-x-1 transition-transform"
-              >→</span
-            >
-          </a>
-        </div>
+        <div class="grid gap-8 md:grid-cols-3 sm:grid-cols-2 grid-cols-1">
+          <!-- Project 1 -->
+          <div
+            class="bg-gray-800 p-7 rounded-xl border border-gray-700 hover:border-orange-500 hover:-translate-y-2 hover:shadow-lg hover:shadow-orange-500/20 transition group"
+            data-aos="fade-up">
+            <div class="flex items-center mb-4">
+              <div
+                class="w-12 h-12 flex items-center justify-center bg-gray-700 rounded-full mr-4">
+                <i class="fa-solid fa-chart-line text-yellow-400 text-xl"></i>
+              </div>
 
-        <!-- CARD 8 -->
-        <div
-          class="bg-gray-800 p-6 rounded-lg shadow hover:shadow-xl transition group"
-          data-aos="fade-up"
-          data-aos-delay="400">
-          <div class="flex items-center mb-4">
-            <i
-              class="fa-solid fa-graduation-cap text-yellow-400 text-2xl mr-3"></i>
-            <h3 class="text-xl font-semibold">Online Learning Platform</h3>
-          </div>
-          <p class="text-gray-400 mb-4">
-            E-learning system with courses, videos, and progress tracking.
-          </p>
-          <a
-            href="#"
-            class="inline-flex items-center text-blue-400 font-medium group-hover:gap-2 transition-all">
-            View Project
-            <span class="group-hover:translate-x-1 transition-transform"
-              >→</span
-            >
-          </a>
-        </div>
+              <h3 class="text-xl font-semibold">Admin Dashboard</h3>
+            </div>
 
-        <!-- CARD 9 -->
-        <div
-          class="bg-gray-800 p-6 rounded-lg shadow hover:shadow-xl transition group"
-          data-aos="fade-up"
-          data-aos-delay="50">
-          <div class="flex items-center mb-4">
-            <i class="fa-solid fa-building text-green-400 text-2xl mr-3"></i>
-            <h3 class="text-xl font-semibold">Business Website</h3>
+            <p class="text-gray-400 mb-5">
+              Modern responsive admin panel with user management, analytics
+              dashboard and content control.
+            </p>
+
+            <a
+              href="./projects/College-management/"
+              class="inline-flex items-center text-orange-400 font-medium group-hover:gap-2 transition-all">
+              View Project
+              <span class="group-hover:translate-x-1 transition-transform"
+                >→</span
+              >
+            </a>
           </div>
-          <p class="text-gray-400 mb-4">
-            Corporate website focused on branding and conversions.
-          </p>
-          <a
-            href="#"
-            class="inline-flex items-center text-blue-400 font-medium group-hover:gap-2 transition-all">
-            View Project
-            <span class="group-hover:translate-x-1 transition-transform"
-              >→</span
-            >
-          </a>
+
+          <!-- Project 2 -->
+          <div
+            class="bg-gray-800 p-7 rounded-xl border border-gray-700 hover:border-orange-500 hover:-translate-y-2 hover:shadow-lg hover:shadow-orange-500/20 transition group"
+            data-aos="fade-up">
+            <div class="flex items-center mb-4">
+              <div
+                class="w-12 h-12 flex items-center justify-center bg-gray-700 rounded-full mr-4">
+                <i class="fa-solid fa-utensils text-red-500 text-xl"></i>
+              </div>
+
+              <h3 class="text-xl font-semibold">Food Delivery App</h3>
+            </div>
+
+            <p class="text-gray-400 mb-5">
+              Food ordering platform with restaurant listings, cart system and
+              real-time order tracking.
+            </p>
+
+            <a
+              href="./projects/food-app/"
+              class="inline-flex items-center text-orange-400 font-medium group-hover:gap-2 transition-all">
+              View Project
+              <span class="group-hover:translate-x-1 transition-transform"
+                >→</span
+              >
+            </a>
+          </div>
+
+          <!-- Project 3 -->
+          <div
+            class="bg-gray-800 p-7 rounded-xl border border-gray-700 hover:border-orange-500 hover:-translate-y-2 hover:shadow-lg hover:shadow-orange-500/20 transition group"
+            data-aos="fade-up">
+            <div class="flex items-center mb-4">
+              <div
+                class="w-12 h-12 flex items-center justify-center bg-gray-700 rounded-full mr-4">
+                <i class="fa-solid fa-bolt text-blue-400 text-xl"></i>
+              </div>
+
+              <h3 class="text-xl font-semibold">EnergyM</h3>
+            </div>
+
+            <p class="text-gray-400 mb-5">
+              Energy management platform for tracking power usage and analytics
+              through modern dashboards.
+            </p>
+
+            <a
+              href="./projects/EnergyM/"
+              class="inline-flex items-center text-orange-400 font-medium group-hover:gap-2 transition-all">
+              View Project
+              <span class="group-hover:translate-x-1 transition-transform"
+                >→</span
+              >
+            </a>
+          </div>
+
+          <!-- Project 4 -->
+          <div
+            class="bg-gray-800 p-7 rounded-xl border border-gray-700 hover:border-orange-500 hover:-translate-y-2 hover:shadow-lg hover:shadow-orange-500/20 transition group"
+            data-aos="fade-up">
+            <div class="flex items-center mb-4">
+              <div
+                class="w-12 h-12 flex items-center justify-center bg-gray-700 rounded-full mr-4">
+                <i class="fa-solid fa-cart-shopping text-green-400 text-xl"></i>
+              </div>
+
+              <h3 class="text-xl font-semibold">E-commerce Platform</h3>
+            </div>
+
+            <p class="text-gray-400 mb-5">
+              Full online shopping platform with product listings, cart,
+              checkout system and payment integration.
+            </p>
+
+            <a
+              href="./projects/E-commerce Platform/"
+              class="inline-flex items-center text-orange-400 font-medium group-hover:gap-2 transition-all">
+              View Project
+              <span class="group-hover:translate-x-1 transition-transform"
+                >→</span
+              >
+            </a>
+          </div>
+
+          <!-- Project 5 -->
+          <div
+            class="bg-gray-800 p-7 rounded-xl border border-gray-700 hover:border-orange-500 hover:-translate-y-2 hover:shadow-lg hover:shadow-orange-500/20 transition group"
+            data-aos="fade-up">
+            <div class="flex items-center mb-4">
+              <div
+                class="w-12 h-12 flex items-center justify-center bg-gray-700 rounded-full mr-4">
+                <i
+                  class="fa-solid fa-graduation-cap text-purple-400 text-xl"></i>
+              </div>
+
+              <h3 class="text-xl font-semibold">Online Learning Platform</h3>
+            </div>
+
+            <p class="text-gray-400 mb-5">
+              Educational platform offering video courses, student dashboard and
+              progress tracking.
+            </p>
+
+            <a
+              href="./projects/Online Learning Platform/"
+              class="inline-flex items-center text-orange-400 font-medium group-hover:gap-2 transition-all">
+              View Project
+              <span class="group-hover:translate-x-1 transition-transform"
+                >→</span
+              >
+            </a>
+          </div>
+
+          <!-- Project 6 -->
+          <div
+            class="bg-gray-800 p-7 rounded-xl border border-gray-700 hover:border-orange-500 hover:-translate-y-2 hover:shadow-lg hover:shadow-orange-500/20 transition group"
+            data-aos="fade-up">
+            <div class="flex items-center mb-4">
+              <div
+                class="w-12 h-12 flex items-center justify-center bg-gray-700 rounded-full mr-4">
+                <i class="fa-solid fa-user text-orange-400 text-xl"></i>
+              </div>
+
+              <h3 class="text-xl font-semibold">Portfolio Website</h3>
+            </div>
+
+            <p class="text-gray-400 mb-5">
+              Personal developer portfolio showcasing projects, skills and
+              professional experience.
+            </p>
+
+            <a
+              href="#"
+              class="inline-flex items-center text-orange-400 font-medium group-hover:gap-2 transition-all">
+              View Project
+              <span class="group-hover:translate-x-1 transition-transform"
+                >→</span
+              >
+            </a>
+          </div>
         </div>
       </div>
     </section>
 
     <!-- Services Section -->
-    <section id="services" class="max-w-7xl mx-auto px-6 py-20">
-      <h2
-        class="text-3xl sm:text-4xl font-bold text-center text-orange-500 mb-12"
-        data-aos="fade-up">
-        Our Services
-      </h2>
-      <div class="grid gap-8 md:grid-cols-3 sm:grid-cols-2 grid-cols-1">
-        <!-- Service 1 -->
-        <div
-          class="bg-white dark:bg-gray-800 p-6 rounded-lg shadow hover:shadow-lg transition"
-          data-aos="fade-up"
-          data-aos-delay="100">
-          <div class="flex items-center mb-4">
-            <i class="fa-solid fa-code text-blue-500 text-2xl mr-3"></i>
-            <h3
-              class="text-xl sm:text-2xl font-semibold text-gray-900 dark:text-gray-100">
-              Web Development
-            </h3>
-          </div>
-          <p class="text-gray-600 dark:text-gray-300 leading-relaxed">
-            We build responsive, modern websites using the latest technologies
-            to boost your online presence.
-          </p>
-        </div>
+    <section id="services" class="bg-gray-900 py-10">
+      <div class="max-w-7xl mx-auto px-6">
+        <h2
+          class="text-3xl sm:text-4xl font-bold text-center mb-6 text-orange-500"
+          data-aos="fade-up">
+          My Services
+        </h2>
 
-        <!-- Service 2 -->
-        <div
-          class="bg-white dark:bg-gray-800 p-6 rounded-lg shadow hover:shadow-lg transition"
-          data-aos="fade-up"
-          data-aos-delay="200">
-          <div class="flex items-center mb-4">
-            <i class="fa-solid fa-paintbrush text-pink-500 text-2xl mr-3"></i>
-            <h3
-              class="text-xl sm:text-2xl font-semibold text-gray-900 dark:text-gray-100">
-              UI / UX Design
-            </h3>
-          </div>
-          <p class="text-gray-600 dark:text-gray-300 leading-relaxed">
-            Designing intuitive and engaging user interfaces for web and mobile
-            applications.
-          </p>
-        </div>
+        <p
+          class="max-w-3xl mx-auto text-center text-gray-400 mb-16"
+          data-aos="fade-up">
+          Delivering modern web solutions including responsive website
+          development, clean UI/UX design, and performance optimization to help
+          businesses build a strong digital presence.
+        </p>
 
-        <!-- Service 3 -->
-        <div
-          class="bg-white dark:bg-gray-800 p-6 rounded-lg shadow hover:shadow-lg transition"
-          data-aos="fade-up"
-          data-aos-delay="300">
-          <div class="flex items-center mb-4">
-            <i
-              class="fa-solid fa-magnifying-glass text-green-500 text-2xl mr-3"></i>
-            <h3
-              class="text-xl sm:text-2xl font-semibold text-gray-900 dark:text-gray-100">
-              SEO Optimization
-            </h3>
-          </div>
-          <p class="text-gray-600 dark:text-gray-300 leading-relaxed">
-            Enhancing your website to rank higher on search engines and attract
-            organic traffic.
-          </p>
-        </div>
+        <div class="grid gap-8 md:grid-cols-3 sm:grid-cols-2 grid-cols-1">
+          <!-- Service 1 -->
+          <div
+            class="bg-gray-800 p-7 rounded-xl border border-gray-700 hover:border-orange-500 hover:-translate-y-2 hover:shadow-lg hover:shadow-orange-500/20 transition"
+            data-aos="fade-up">
+            <div class="flex items-center mb-4">
+              <div
+                class="w-12 h-12 flex items-center justify-center bg-gray-700 rounded-full mr-4">
+                <i class="fa-solid fa-code text-blue-400 text-xl"></i>
+              </div>
 
-        <!-- Service 4 -->
-        <div
-          class="bg-white dark:bg-gray-800 p-6 rounded-lg shadow hover:shadow-lg transition"
-          data-aos="fade-up"
-          data-aos-delay="400">
-          <div class="flex items-center mb-4">
-            <i
-              class="fa-solid fa-cart-shopping text-yellow-500 text-2xl mr-3"></i>
-            <h3
-              class="text-xl sm:text-2xl font-semibold text-gray-900 dark:text-gray-100">
-              E-commerce Solutions
-            </h3>
-          </div>
-          <p class="text-gray-600 dark:text-gray-300 leading-relaxed">
-            Custom online stores with secure payment gateways and user-friendly
-            shopping experiences.
-          </p>
-        </div>
+              <h3 class="text-xl font-semibold">Web Development</h3>
+            </div>
 
-        <!-- Service 5 -->
-        <div
-          class="bg-white dark:bg-gray-800 p-6 rounded-lg shadow hover:shadow-lg transition"
-          data-aos="fade-up"
-          data-aos-delay="500">
-          <div class="flex items-center mb-4">
-            <i class="fa-solid fa-bullhorn text-purple-500 text-2xl mr-3"></i>
-            <h3
-              class="text-xl sm:text-2xl font-semibold text-gray-900 dark:text-gray-100">
-              Branding & Identity
-            </h3>
+            <p class="text-gray-400">
+              Building responsive, fast, and scalable websites using modern
+              technologies and best development practices.
+            </p>
           </div>
-          <p class="text-gray-600 dark:text-gray-300 leading-relaxed">
-            Creating a strong brand identity with logos, colors, and digital
-            assets that stand out.
-          </p>
-        </div>
 
-        <!-- Service 6 -->
-        <div
-          class="bg-white dark:bg-gray-800 p-6 rounded-lg shadow hover:shadow-lg transition"
-          data-aos="fade-up"
-          data-aos-delay="600">
-          <div class="flex items-center mb-4">
-            <i class="fa-solid fa-lightbulb text-orange-500 text-2xl mr-3"></i>
-            <h3
-              class="text-xl sm:text-2xl font-semibold text-gray-900 dark:text-gray-100">
-              Consulting
-            </h3>
-          </div>
-          <p class="text-gray-600 dark:text-gray-300 leading-relaxed">
-            Expert advice to help grow your digital presence and streamline your
-            development workflow.
-          </p>
-        </div>
+          <!-- Service 2 -->
+          <div
+            class="bg-gray-800 p-7 rounded-xl border border-gray-700 hover:border-orange-500 hover:-translate-y-2 hover:shadow-lg hover:shadow-orange-500/20 transition"
+            data-aos="fade-up">
+            <div class="flex items-center mb-4">
+              <div
+                class="w-12 h-12 flex items-center justify-center bg-gray-700 rounded-full mr-4">
+                <i class="fa-solid fa-paintbrush text-pink-400 text-xl"></i>
+              </div>
 
-        <!-- Service 7 -->
-        <div
-          class="bg-white dark:bg-gray-800 p-6 rounded-lg shadow hover:shadow-lg transition"
-          data-aos="fade-up"
-          data-aos-delay="700">
-          <div class="flex items-center mb-4">
-            <i
-              class="fa-solid fa-mobile-screen-button text-blue-400 text-2xl mr-3"></i>
-            <h3
-              class="text-xl sm:text-2xl font-semibold text-gray-900 dark:text-gray-100">
-              Mobile App Development
-            </h3>
-          </div>
-          <p class="text-gray-600 dark:text-gray-300 leading-relaxed">
-            Building high-performance mobile applications for iOS and Android
-            platforms.
-          </p>
-        </div>
+              <h3 class="text-xl font-semibold">UI / UX Design</h3>
+            </div>
 
-        <!-- Service 8 -->
-        <div
-          class="bg-white dark:bg-gray-800 p-6 rounded-lg shadow hover:shadow-lg transition"
-          data-aos="fade-up"
-          data-aos-delay="800">
-          <div class="flex items-center mb-4">
-            <i class="fa-solid fa-cloud text-indigo-500 text-2xl mr-3"></i>
-            <h3
-              class="text-xl sm:text-2xl font-semibold text-gray-900 dark:text-gray-100">
-              Cloud Solutions
-            </h3>
+            <p class="text-gray-400">
+              Designing intuitive and visually appealing interfaces focused on
+              usability and user experience.
+            </p>
           </div>
-          <p class="text-gray-600 dark:text-gray-300 leading-relaxed">
-            Scalable cloud infrastructure and hosting solutions for businesses
-            of all sizes.
-          </p>
-        </div>
 
-        <!-- Service 9 -->
-        <div
-          class="bg-white dark:bg-gray-800 p-6 rounded-lg shadow hover:shadow-lg transition"
-          data-aos="fade-up"
-          data-aos-delay="900">
-          <div class="flex items-center mb-4">
-            <i class="fa-solid fa-shield text-red-500 text-2xl mr-3"></i>
-            <h3
-              class="text-xl sm:text-2xl font-semibold text-gray-900 dark:text-gray-100">
-              Cybersecurity
-            </h3>
+          <!-- Service 3 -->
+          <div
+            class="bg-gray-800 p-7 rounded-xl border border-gray-700 hover:border-orange-500 hover:-translate-y-2 hover:shadow-lg hover:shadow-orange-500/20 transition"
+            data-aos="fade-up">
+            <div class="flex items-center mb-4">
+              <div
+                class="w-12 h-12 flex items-center justify-center bg-gray-700 rounded-full mr-4">
+                <i
+                  class="fa-solid fa-magnifying-glass text-green-400 text-xl"></i>
+              </div>
+
+              <h3 class="text-xl font-semibold">SEO Optimization</h3>
+            </div>
+
+            <p class="text-gray-400">
+              Improving website visibility on search engines to attract more
+              organic traffic and customers.
+            </p>
           </div>
-          <p class="text-gray-600 dark:text-gray-300 leading-relaxed">
-            Protecting websites and applications from security threats and
-            vulnerabilities.
-          </p>
+
+          <!-- Service 4 -->
+          <div
+            class="bg-gray-800 p-7 rounded-xl border border-gray-700 hover:border-orange-500 hover:-translate-y-2 hover:shadow-lg hover:shadow-orange-500/20 transition"
+            data-aos="fade-up">
+            <div class="flex items-center mb-4">
+              <div
+                class="w-12 h-12 flex items-center justify-center bg-gray-700 rounded-full mr-4">
+                <i
+                  class="fa-solid fa-cart-shopping text-yellow-400 text-xl"></i>
+              </div>
+
+              <h3 class="text-xl font-semibold">E-commerce Development</h3>
+            </div>
+
+            <p class="text-gray-400">
+              Creating secure online stores with payment integration and smooth
+              shopping experiences.
+            </p>
+          </div>
+
+          <!-- Service 5 -->
+          <div
+            class="bg-gray-800 p-7 rounded-xl border border-gray-700 hover:border-orange-500 hover:-translate-y-2 hover:shadow-lg hover:shadow-orange-500/20 transition"
+            data-aos="fade-up">
+            <div class="flex items-center mb-4">
+              <div
+                class="w-12 h-12 flex items-center justify-center bg-gray-700 rounded-full mr-4">
+                <i class="fa-solid fa-bullhorn text-purple-400 text-xl"></i>
+              </div>
+
+              <h3 class="text-xl font-semibold">Branding & Identity</h3>
+            </div>
+
+            <p class="text-gray-400">
+              Helping businesses build strong digital identities through design,
+              branding and creative strategy.
+            </p>
+          </div>
+
+          <!-- Service 6 -->
+          <div
+            class="bg-gray-800 p-7 rounded-xl border border-gray-700 hover:border-orange-500 hover:-translate-y-2 hover:shadow-lg hover:shadow-orange-500/20 transition"
+            data-aos="fade-up">
+            <div class="flex items-center mb-4">
+              <div
+                class="w-12 h-12 flex items-center justify-center bg-gray-700 rounded-full mr-4">
+                <i class="fa-solid fa-lightbulb text-orange-400 text-xl"></i>
+              </div>
+
+              <h3 class="text-xl font-semibold">Tech Consulting</h3>
+            </div>
+
+            <p class="text-gray-400">
+              Providing expert guidance on technology, architecture and
+              development strategy.
+            </p>
+          </div>
         </div>
       </div>
-      <!-- ✅ GRID END -->
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="bg-gray-900 py-10">
+      <div class="max-w-7xl mx-auto px-6">
+        <h2
+          class="text-3xl sm:text-4xl font-bold text-center mb-6 text-orange-500"
+          data-aos="fade-up">
+          Client Testimonials
+        </h2>
+
+        <p
+          class="max-w-3xl mx-auto text-center text-gray-400 mb-16"
+          data-aos="fade-up">
+          Feedback from clients and collaborators who experienced the quality,
+          dedication, and professionalism delivered in every project.
+        </p>
+
+        <div class="grid md:grid-cols-3 sm:grid-cols-2 gap-8">
+          <!-- Testimonial 1 -->
+          <div
+            class="bg-gray-800 p-7 rounded-xl border border-gray-700 hover:border-orange-500 hover:-translate-y-2 hover:shadow-lg hover:shadow-orange-500/20 transition"
+            data-aos="fade-up">
+            <div class="text-orange-500 text-2xl mb-4">
+              <i class="fa-solid fa-quote-left"></i>
+            </div>
+
+            <p class="text-gray-300 mb-6">
+              Rohit built an amazing responsive website for our business. Very
+              professional communication and fast delivery.
+            </p>
+
+            <div class="flex items-center">
+              <img
+                src="https://i.pravatar.cc/60?img=1"
+                class="w-12 h-12 rounded-full mr-4"
+                alt="client" />
+
+              <div>
+                <h4 class="font-semibold text-orange-500">Rahul Sharma</h4>
+
+                <p class="text-gray-400 text-sm">Startup Founder</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Testimonial 2 -->
+          <div
+            class="bg-gray-800 p-7 rounded-xl border border-gray-700 hover:border-orange-500 hover:-translate-y-2 hover:shadow-lg hover:shadow-orange-500/20 transition"
+            data-aos="fade-up">
+            <div class="text-orange-500 text-2xl mb-4">
+              <i class="fa-solid fa-quote-left"></i>
+            </div>
+
+            <p class="text-gray-300 mb-6">
+              Clean UI design and excellent frontend development skills. The
+              final product exceeded our expectations.
+            </p>
+
+            <div class="flex items-center">
+              <img
+                src="https://i.pravatar.cc/60?img=5"
+                class="w-12 h-12 rounded-full mr-4"
+                alt="client" />
+
+              <div>
+                <h4 class="font-semibold text-orange-500">Ankit Verma</h4>
+
+                <p class="text-gray-400 text-sm">Product Manager</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Testimonial 3 -->
+          <div
+            class="bg-gray-800 p-7 rounded-xl border border-gray-700 hover:border-orange-500 hover:-translate-y-2 hover:shadow-lg hover:shadow-orange-500/20 transition"
+            data-aos="fade-up">
+            <div class="text-orange-500 text-2xl mb-4">
+              <i class="fa-solid fa-quote-left"></i>
+            </div>
+
+            <p class="text-gray-300 mb-6">
+              Very talented developer who understands client needs and delivers
+              high quality work on time.
+            </p>
+
+            <div class="flex items-center">
+              <img
+                src="https://i.pravatar.cc/60?img=8"
+                class="w-12 h-12 rounded-full mr-4"
+                alt="client" />
+
+              <div>
+                <h4 class="font-semibold text-orange-500">Priya Singh</h4>
+
+                <p class="text-gray-400 text-sm">Business Owner</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </section>
 
     <!-- Footer -->
-    <footer
-      class="bg-gray-800 text-gray-300 border-t border-gray-700 relative z-10">
+    <footer class="bg-gray-900 text-gray-300 border-t border-gray-800">
       <div
-        class="max-w-7xl mx-auto px-6 py-12 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8">
+        class="max-w-7xl mx-auto px-6 py-16 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-10">
         <!-- About -->
         <div>
           <a
             href="index.html"
-            class="flex items-center gap-2 text-4xl font-bold text-orange-500">
-            <i class="fa-solid fa-laptop-code text-orange-400 text-2xl"></i>
+            class="flex items-center gap-2 text-3xl font-bold text-orange-500">
+            <i class="fa-solid fa-laptop-code text-orange-400"></i>
             mrohitgupta9
           </a>
-          <p class="text-gray-400 mt-2">
-            Delivering professional web solutions that blend creativity,
-            performance, and modern design to help individuals and businesses
-            grow online.
+
+          <p class="text-gray-400 mt-4 leading-relaxed">
+            Delivering modern web solutions that combine creativity, performance
+            and clean design to help businesses grow online.
           </p>
         </div>
 
         <!-- Quick Links -->
         <div>
-          <h4 class="font-semibold mb-4 text-orange-500">Quick Links</h4>
-          <ul class="space-y-2">
+          <h4 class="font-semibold mb-5 text-orange-500">Quick Links</h4>
+
+          <ul class="space-y-3">
             <li>
-              <a href="index.html" class="hover:text-blue-400 transition"
-                >Home</a
-              >
+              <a href="index.html" class="hover:text-orange-400 transition">
+                Home
+              </a>
             </li>
+
             <li>
-              <a href="about.html" class="hover:text-blue-400 transition"
-                >About</a
-              >
+              <a href="about.html" class="hover:text-orange-400 transition">
+                About
+              </a>
             </li>
+
             <li>
-              <a href="projects.html" class="hover:text-blue-400 transition"
-                >Projects</a
-              >
+              <a href="projects.html" class="hover:text-orange-400 transition">
+                Projects
+              </a>
             </li>
+
             <li>
-              <a href="services.html" class="hover:text-blue-400 transition"
-                >Services</a
-              >
+              <a href="services.html" class="hover:text-orange-400 transition">
+                Services
+              </a>
             </li>
+
             <li>
-              <a href="contact.html" class="hover:text-blue-400 transition"
-                >Contact</a
-              >
+              <a href="contact.html" class="hover:text-orange-400 transition">
+                Contact
+              </a>
             </li>
           </ul>
         </div>
 
-        <!-- Services with Modal -->
+        <!-- Services -->
         <div>
-          <h4 class="font-semibold mb-4 text-orange-500">Services</h4>
-          <ul class="space-y-2">
+          <h4 class="font-semibold mb-5 text-orange-500">Services</h4>
+
+          <ul class="space-y-3">
             <li>
               <a
                 href="#"
-                class="hover:text-blue-400 transition cursor-pointer"
                 onclick="showService('Web Development')"
-                >Web Development</a
-              >
+                class="hover:text-orange-400 transition">
+                Web Development
+              </a>
             </li>
+
             <li>
               <a
                 href="#"
-                class="hover:text-blue-400 transition cursor-pointer"
                 onclick="showService('UI/UX Design')"
-                >UI/UX Design</a
-              >
+                class="hover:text-orange-400 transition">
+                UI / UX Design
+              </a>
             </li>
+
             <li>
               <a
                 href="#"
-                class="hover:text-blue-400 transition cursor-pointer"
                 onclick="showService('SEO Optimization')"
-                >SEO Optimization</a
-              >
+                class="hover:text-orange-400 transition">
+                SEO Optimization
+              </a>
             </li>
+
             <li>
               <a
                 href="#"
-                class="hover:text-blue-400 transition cursor-pointer"
-                onclick="showService('E-commerce')"
-                >E-commerce</a
-              >
+                onclick="showService('E-commerce Development')"
+                class="hover:text-orange-400 transition">
+                E-commerce
+              </a>
             </li>
+
             <li>
               <a
                 href="#"
-                class="hover:text-blue-400 transition cursor-pointer"
-                onclick="showService('Cybersecurity')"
-                >Cybersecurity</a
-              >
+                onclick="showService('Tech Consulting')"
+                class="hover:text-orange-400 transition">
+                Consulting
+              </a>
             </li>
           </ul>
         </div>
 
-        <!-- Contact & Socials -->
+        <!-- Contact -->
         <div>
-          <h4 class="font-semibold mb-4 text-orange-500">Contact</h4>
-          <p class="text-sm mb-1">
-            <i class="fa-solid fa-envelope mr-2 text-blue-400"></i
-            >mrohitgupta9@gmail.com
-          </p>
-          <p class="text-sm">
-            <i class="fa-solid fa-phone mr-2 text-blue-400"></i>+91 9115095844
+          <h4 class="font-semibold mb-5 text-orange-500">Contact</h4>
+
+          <p class="text-sm mb-3 flex items-center">
+            <i class="fa-solid fa-envelope mr-3 text-orange-400"></i>
+            mrohitgupta9@gmail.com
           </p>
 
-          <h4 class="font-semibold mb-4 mt-4 text-white">Follow Me</h4>
-          <div class="flex space-x-4 mt-5 text-lg">
+          <p class="text-sm mb-6 flex items-center">
+            <i class="fa-solid fa-phone mr-3 text-orange-400"></i>
+            +91 9115095844
+          </p>
+
+          <h4 class="font-semibold mb-4 text-white">Follow Me</h4>
+
+          <div class="flex gap-4 text-lg">
             <a
               href="https://www.facebook.com/mrohitgupta9"
               target="_blank"
-              class="hover:text-blue-400 transition text-orange-500"
-              ><i class="fab fa-facebook-f"></i
-            ></a>
+              class="w-10 h-10 flex items-center justify-center rounded-full bg-gray-800 hover:bg-orange-500 transition">
+              <i class="fab fa-facebook-f"></i>
+            </a>
+
             <a
               href="https://www.instagram.com/mrohitgupta9"
               target="_blank"
-              class="hover:text-pink-400 transition text-orange-500"
-              ><i class="fab fa-instagram"></i
-            ></a>
+              class="w-10 h-10 flex items-center justify-center rounded-full bg-gray-800 hover:bg-orange-500 transition">
+              <i class="fab fa-instagram"></i>
+            </a>
+
             <a
               href="https://www.twitter.com/mrohitgupta9"
               target="_blank"
-              class="hover:text-sky-400 transition text-orange-500"
-              ><i class="fab fa-twitter"></i
-            ></a>
+              class="w-10 h-10 flex items-center justify-center rounded-full bg-gray-800 hover:bg-orange-500 transition">
+              <i class="fab fa-twitter"></i>
+            </a>
+
             <a
               href="https://www.linkedin.com/in/mrohitgupta9"
               target="_blank"
-              class="hover:text-blue-500 transition text-orange-500"
-              ><i class="fab fa-linkedin-in"></i
-            ></a>
+              class="w-10 h-10 flex items-center justify-center rounded-full bg-gray-800 hover:bg-orange-500 transition">
+              <i class="fab fa-linkedin-in"></i>
+            </a>
+
             <a
               href="https://github.com/mrohitgupta9"
               target="_blank"
-              class="hover:text-gray-100 transition text-orange-500"
-              ><i class="fab fa-github"></i
-            ></a>
+              class="w-10 h-10 flex items-center justify-center rounded-full bg-gray-800 hover:bg-orange-500 transition">
+              <i class="fab fa-github"></i>
+            </a>
           </div>
         </div>
       </div>
 
-      <!-- Copyright -->
-      <div class="border-t border-gray-700 py-4 text-center text-sm">
-        © 2025 mrohitgupta9. All rights reserved.
+      <!-- Bottom Copyright -->
+      <div
+        class="border-t border-gray-800 text-center py-5 text-sm text-gray-400">
+        © 2026 <span class="text-orange-500">mrohitgupta9</span>. All rights
+        reserved.
       </div>
 
       <!-- Modal -->
       <div
         id="serviceModal"
-        class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center hidden z-50 transition-opacity duration-300">
+        class="fixed inset-0 bg-black bg-opacity-60 flex items-center justify-center hidden z-50">
         <div
-          class="bg-gray-900 text-gray-200 p-6 rounded-lg max-w-lg w-full relative shadow-lg transform scale-95 opacity-0 transition-all duration-300">
+          class="bg-gray-900 p-7 rounded-xl max-w-lg w-full border border-gray-700 relative">
           <button
             onclick="closeModal()"
-            class="absolute top-3 right-3 text-gray-400 hover:text-white text-lg font-bold">
-            &times;
+            class="absolute right-4 top-3 text-gray-400 hover:text-white text-xl">
+            ×
           </button>
-          <h3 id="serviceTitle" class="text-2xl font-bold mb-3 text-orange-500">
+
+          <h3 id="serviceTitle" class="text-2xl font-bold text-orange-500 mb-4">
             Service Title
           </h3>
+
           <div
             id="serviceDesc"
             class="text-gray-300 leading-relaxed max-h-72 overflow-y-auto pr-2"></div>
+
           <button
             onclick="closeModal()"
-            class="mt-5 px-4 py-2 bg-orange-500 hover:bg-orange-600 rounded text-white font-medium w-full">
+            class="mt-6 w-full bg-orange-500 hover:bg-orange-600 transition py-2 rounded">
             Close
           </button>
         </div>
@@ -799,7 +1240,10 @@
 
       const btn = document.getElementById("mobile-menu-btn");
       const menu = document.getElementById("mobile-menu");
-      btn.addEventListener("click", () => menu.classList.toggle("hidden"));
+
+      btn.addEventListener("click", () => {
+        menu.classList.toggle("hidden");
+      });
     </script>
 
     <style>
@@ -871,7 +1315,7 @@
       <br>
       We make online shopping smooth for your customers.`,
 
-        "Cybersecurity": `Protecting your digital assets with robust security solutions and proactive threat management.
+        Cybersecurity: `Protecting your digital assets with robust security solutions and proactive threat management.
       <br><br>
       <strong>Capabilities:</strong>
       <ul class="list-disc pl-5">
